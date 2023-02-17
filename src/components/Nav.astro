@@ -26,9 +26,7 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
 ---
 
 <nav>
-  <div
-    class="flex w-full items-center sm:px-10 justify-between md:justify-center p-5 lg:px-20"
-  >
+  <div class="flex w-full items-center sm:px-10 p-5 justify-between lg:px-20">
     <a
       href="/"
       class="text-lg sm:text-xl font-semibold tracking-tighter flex items-center gap-3"
@@ -47,7 +45,7 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
     </menu-button>
 
     <ul
-      class="hidden md:sticky md:top-0 md:flex md:ml-auto md:mr-auto gap-3 dark:bg-slate-800 bg-slate-200 p-3 rounded-lg"
+      class="hidden md:mx-auto w-64 md:flex justify-center gap-3 dark:bg-slate-700/50 backdrop-blur-lg bg-slate-200 p-4 rounded-lg"
     >
       {
         textLinks.map(({ label, href }) => (
@@ -55,7 +53,7 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
             <a
               aria-current={Astro.url.pathname === href}
               class:list={[
-                "font-semibold text-slate-800 dark:text-slate-200 rounded-lg hover:bg-teal-500/50 dark:hover:bg-teal-600/50 p-2",
+                "font-semibold text-slate-800 dark:text-slate-200 rounded-lg hover:bg-teal-500 dark:hover:bg-teal-600 p-3",
                 {
                   active:
                     Astro.url.pathname === href ||
