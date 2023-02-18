@@ -1,8 +1,10 @@
 ---
 title: Cryptosito
 publishDate: 2020-03-04 00:00:00
-img: /assets/stock-4.jpg
+img: /assets/cryptosito.png
 img_alt: Screenshot of homepage of Cryptosito
+link: https://cryptosito.vercel.app/
+github: https://github.com/infiplaya/cryptosito
 description: |
   I developed fullstack coinmarket application that displays informations about cryptocurrencies.
 tags:

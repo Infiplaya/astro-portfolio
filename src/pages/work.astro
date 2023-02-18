@@ -7,7 +7,6 @@ import ContactCTA from "../components/ContactCTA.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
 import Hero from "../components/Hero.astro";
 import Grid from "../components/Grid.astro";
-import { Icon } from "astro-icon";
 
 const projects = (await getCollection("work")).sort(
   (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
@@ -41,7 +40,7 @@ const projects = (await getCollection("work")).sort(
           Other work
         </h2>
         <p
-          class="text-center mt-3 lg:text-xl text-zinc-700 dark:text-zinc-300 text-lg lg:text-left"
+          class="text-center mt-3 text-zinc-700 dark:text-zinc-300 text-lg lg:text-left"
         >
           Check out more of my smaller projects that are available on my <a
             href="https://github.com/infiplaya"

@@ -5,6 +5,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
 import ContactCTA from "../../components/ContactCTA.astro";
 import Hero from "../../components/Hero.astro";
+import { Icon } from "astro-icon";
 
 interface Props {
   entry: CollectionEntry<"work">;
@@ -38,17 +39,51 @@ const { Content } = await entry.render();
               <div class="flex justify-center lg:justify-start gap-5 mt-3">
                 {
                   entry.data.tags.map((t) => (
-                    <div class="lg:px-6 px-4 py-2 rounded-lg bg-indigo-500">
+                    <div class="lg:px-6 px-4 py-2 rounded-lg bg-indigo-500 text-zinc-50">
                       {t}
                     </div>
                   ))
                 }
               </div>
               <p
-                class="mt-5 lg:text-lg indent-4 font-semibold text-zinc-700 dark:text-zinc-200"
+                class="mt-5 lg:text-lg font-semibold text-zinc-700 dark:text-zinc-200"
               >
                 {entry.data.description}
               </p>
+
+              <div>
+                {
+                  entry.data.link && (
+                    <a href={entry.data.link}>
+                      <div class="flex items-center gap-2 mt-5">
+                        <Icon
+                          name="mdi:link-box-variant"
+                          class="w-6 h-6 text-orange-300"
+                        />
+                        <p class="dark:text-orange-300 font-semibold text-orange-700">
+                          {entry.data.link}
+                        </p>
+                      </div>
+                    </a>
+                  )
+                }
+
+                {
+                  entry.data.github && (
+                    <a href={entry.data.github}>
+                      <div class="flex items-center gap-2 mt-5">
+                        <Icon
+                          name="mdi:github"
+                          class="w-6 h-6 text-orange-300"
+                        />
+                        <p class="dark:text-orange-300 font-semibold text-orange-700">
+                          {entry.data.github}
+                        </p>
+                      </div>
+                    </a>
+                  )
+                }
+              </div>
             </div>
           </Hero>
         </div>
@@ -65,7 +100,7 @@ const { Content } = await entry.render();
             )
           }
           <div
-            class="prose-zinc prose-p:mt-4 mt-10 prose-p:text-slate-200 prose-p:leading-relaxed prose-h1:text-3xl prose-headings:my-4 prose-h2:text-2xl prose-h3:text-xl prose-headings:font-bold lg:w-3/4 mx-auto"
+            class="prose-zinc prose-p:text-zinc-800 prose-p:indent-4 dark:prose-p:text-zinc-200 prose-p:mt-4 mt-10 prose-p:leading-relaxed prose-h1:text-3xl prose-headings:my-4 prose-h2:text-2xl prose-h3:text-xl prose-headings:font-bold lg:w-3/4 mx-auto"
           >
             <Content />
           </div>

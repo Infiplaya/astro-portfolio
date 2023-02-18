@@ -29,7 +29,7 @@ const projects = (await getCollection("work"))
       >
         <Hero
           title={`Hello there! My name is ${" "} Paweł Sobaniec`}
-          tagline="Thanks for stopping by and learning a little bit more about me! If you have any questions or want to chat about programming, feel free to send me a message."
+          tagline="I am a passionate web developer who is eager to start their career in programming. I'm constantly seeking out opportunities to grow and improve my craft. I believe that technology has the power to transform people's lives, and I'm committed to using my skills to create impactful and user-friendly digital experiences. Let's work together to bring your web vision to life!"
           href="/about"
         />
 
@@ -57,7 +57,7 @@ const projects = (await getCollection("work"))
       <section>
         <header class="flex flex-col text-center lg:text-left gap-2 lg:gap-4">
           <h3 class="font-bold text-3xl lg:text-4xl">Selected projects</h3>
-          <p class="font-medium text-zinc-600 dark:text-zinc-300 sm:text-lg">
+          <p class="font-medium text-zinc-600 dark:text-zinc-300">
             I believe making projects is the best way to learn. Take a look at
             them!
           </p>
@@ -66,8 +66,8 @@ const projects = (await getCollection("work"))
         <div>
           <Grid variant="offset">
             {
-              projects.map((project) => (
-                <li>
+              projects.map((project, index) => (
+                <li class={index % 2 === 0 ? "pt-40" : null}>
                   <PortfolioPreview project={project} />
                 </li>
               ))

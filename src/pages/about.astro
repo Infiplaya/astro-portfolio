@@ -16,12 +16,14 @@ import Hero from "../components/Hero.astro";
       />
       <img
         src="/assets/avatar.jpg"
-        class="rounded-lg shadow-lg mx-auto dark:shadow-zinc-700 mt-10"
+        class="rounded-lg shadow-lg shadow-zinc-400 mx-auto dark:shadow-zinc-700 mt-10"
       />
 
-      <section>
+      <section class="max-w-3xl mx-auto">
         <h2 class="font-semibold text-3xl mt-10">Background</h2>
-        <article class="indent-4 mt-2 text-lg dark:text-zinc-300 text-zinc-700">
+        <article
+          class="prose-zinc indent-4 prose-p:text-zinc-800 dark:prose-p:text-zinc-200 prose-p:mt-4 prose-p:leading-relaxed prose-h1:text-3xl prose-headings:my-4 prose-h2:text-2xl prose-h3:text-xl prose-headings:font-bold"
+        >
           <p class="mb-4">
             Hey there! I'm a programmer who's been learning the ropes for a
             little over half a year now. I actually have some experience with
@@ -50,21 +52,24 @@ import Hero from "../components/Hero.astro";
             with friends.
           </p>
           <p>
-            Thanks for stopping by and learning a little bit more about me! If
-            you have any questions or want to chat about programming, feel free
-            to send me a message.
+            Again, thanks for stopping by and learning a little bit more about
+            me! If you have any questions or want to chat about programming,
+            feel free to send me a message.
           </p>
         </article>
       </section>
-      <section>
-        <h2 class="font-semibold text-3xl mt-10">Skills</h2>
-        <div class="mt-2 dark:text-zinc-300 text-zinc-700 text-lg">
-          <ul>
+      <section class="max-w-3xl mx-auto">
+        <h2 class="font-semibold text-3xl mt-10">Tech I Use</h2>
+        <div class="mt-2 dark:text-zinc-300 text-zinc-700">
+          <ul class="p-3">
             <li>HTML</li>
             <li>CSS</li>
             <li>Javascript / Typescript</li>
             <li>React</li>
             <li>Nextjs</li>
+            <li>Graphql</li>
+            <li>Prisma</li>
+            <li>TRPC</li>
             <li>Python</li>
           </ul>
         </div>
@@ -74,5 +79,3 @@ import Hero from "../components/Hero.astro";
     <ContactCTA />
   </div>
 </BaseLayout>
-
-

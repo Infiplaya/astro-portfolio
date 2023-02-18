@@ -30,7 +30,7 @@ const textLinks: { label: string; href: string }[] = [
     </menu-button>
 
     <ul
-      class="hidden md:mx-auto w-64 md:flex justify-center gap-3 dark:bg-zinc-700/50 backdrop-blur-lg bg-zinc-200 py-4 px-6 rounded-lg"
+      class="hidden md:mx-auto relative font-medium text-sm w-64 md:flex justify-center gap-2 dark:bg-zinc-700/50 bg-zinc-200 px-8 rounded-lg"
     >
       {
         textLinks.map(({ label, href }) => (
@@ -38,17 +38,21 @@ const textLinks: { label: string; href: string }[] = [
             <a
               aria-current={Astro.url.pathname === href}
               class:list={[
-                "font-semibold text-zinc-800 dark:text-zinc-200  rounded-lg hover:bg-orange-600/75 p-3",
                 {
-                  active:
+                  "dark:text-orange-400 text-orange-500":
                     Astro.url.pathname === href ||
                     (href !== "/" && Astro.url.pathname.startsWith(href)),
                 },
+                "block transition relative text-zinc-800 dark:text-zinc-100 py-3 px-4 hover:text-orange-500 dark:hover:text-orange-400 rounded-lg",
               ]}
               href={href}
               target="_blank"
             >
               {label}
+              {Astro.url.pathname === href ||
+              (href !== "/" && Astro.url.pathname.startsWith(href)) ? (
+                <span class="absolute inset-x-1 -bottom-px h-[3px] bg-gradient-to-r from-orange-500/0 via-orange-500/40 to-orange-500/0 dark:from-orange-400/0 dark:via-orange-400/40 dark:to-orange-400/0" />
+              ) : null}
             </a>
           </li>
         ))
@@ -59,7 +63,7 @@ const textLinks: { label: string; href: string }[] = [
       <a href="https://github.com/infiplaya">
         <span class="sr-only">Github</span>
         <Icon
-          class="dark:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-2xl p-1 text-zinc-800 hover:text-orange-500 dark:hover:text-orange-500 w-9 h-9 subpixel-antialiased"
+          class="dark:text-zinc-100 transition hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-2xl p-1 text-zinc-800 hover:text-orange-500 dark:hover:text-orange-500 w-9 h-9 subpixel-antialiased"
           name="mdi:github"
         />
       </a>
@@ -78,14 +82,7 @@ const textLinks: { label: string; href: string }[] = [
           <li>
             <a
               aria-current={Astro.url.pathname === href}
-              class:list={[
-                "font-semibold text-zinc-800 dark:text-zinc-200",
-                {
-                  active:
-                    Astro.url.pathname === href ||
-                    (href !== "/" && Astro.url.pathname.startsWith(href)),
-                },
-              ]}
+              class="font-semibold text-zinc-800 dark:text-zinc-200"
               href={href}
               target="_blank"
             >
@@ -112,12 +109,6 @@ const textLinks: { label: string; href: string }[] = [
     </div>
   </div>
 </nav>
-
-<style>
-  .active {
-    @apply text-zinc-900;
-  }
-</style>
 
 <script>
   class MenuButton extends HTMLElement {
