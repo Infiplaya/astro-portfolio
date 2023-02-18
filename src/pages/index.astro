@@ -67,7 +67,7 @@ const projects = (await getCollection("work"))
           <Grid variant="offset">
             {
               projects.map((project, index) => (
-                <li class={index % 2 === 0 ? "pt-40" : null}>
+                <li class={index % 2 !== 0 ? "lg:pt-40" : null}>
                   <PortfolioPreview project={project} />
                 </li>
               ))
