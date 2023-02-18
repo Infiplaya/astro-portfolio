@@ -37,14 +37,11 @@ const textLinks: { label: string; href: string }[] = [
           <li>
             <a
               aria-current={Astro.url.pathname === href}
-              class:list={[
-                {
-                  "dark:text-orange-400 text-orange-500":
-                    Astro.url.pathname === href ||
-                    (href !== "/" && Astro.url.pathname.startsWith(href)),
-                },
-                "block transition relative text-zinc-800 dark:text-zinc-100 py-3 px-4 hover:text-orange-500 dark:hover:text-orange-400 rounded-lg",
-              ]}
+              class={
+                Astro.url.pathname === href
+                  ? "block transition relative text-orange-600 dark:text-orange-400 py-3 px-4 hover:text-orange-500 dark:hover:text-orange-400 rounded-lg"
+                  : "block transition relative text-zinc-800 dark:text-zinc-100 py-3 px-4 hover:text-orange-500 dark:hover:text-orange-400 rounded-lg"
+              }
               href={href}
             >
               {label}
@@ -81,7 +78,11 @@ const textLinks: { label: string; href: string }[] = [
           <li>
             <a
               aria-current={Astro.url.pathname === href}
-              class="font-semibold text-zinc-800 dark:text-zinc-200"
+              class={
+                Astro.url.pathname === href
+                  ? "block transition relative text-orange-600 dark:text-orange-400  hover:text-orange-500 dark:hover:text-orange-400 rounded-lg"
+                  : "block transition relative text-zinc-800 dark:text-zinc-100  hover:text-orange-500 dark:hover:text-orange-400 rounded-lg"
+              }
               href={href}
             >
               {label}
