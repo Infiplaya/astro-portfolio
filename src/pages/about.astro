@@ -12,40 +12,53 @@ import Hero from "../components/Hero.astro";
     <main>
       <Hero
         title="About"
-        tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+        tagline="Thanks for stopping by. It means a lot for me. Read below to learn more about myself and my background."
+      />
+      <img
+        src="/assets/avatar.jpg"
+        class="rounded-lg shadow-lg mx-auto dark:shadow-zinc-700 mt-10"
       />
 
       <section>
         <h2 class="font-semibold text-3xl mt-10">Background</h2>
-        <div class="indent-4 mt-2 text-lg">
-          Hey there! I'm a programmer who's been learning the ropes for a little
-          over half a year now. I actually have some experience with coding from
-          when I was a kid - back then, I dabbled in creating simple websites
-          and forums using HTML and templates. But now, I'm taking on bigger
-          challenges and using more advanced tools like React, Nextjs, and
-          Typescript. <br />
-          I'm really passionate about programming and love diving into new projects
-          and exploring different programming languages. I find it incredibly satisfying
-          to see an idea take shape through code and then come to life as a functional
-          program.
-          <br />
-          Of course, being a programmer can be frustrating at times - there's always
-          something new to learn, and there are inevitably going to be bugs and glitches
-          to troubleshoot. But the satisfaction of finally solving a problem and
-          getting everything working smoothly is definitely worth it.
-          <br />
-          When I'm not coding, you can usually find me reading books or catching
-          up on the latest movies and TV shows. I'm also a big fan of video games
-          and enjoy spending some of my free time playing online with friends.
-          <br />
-          Thanks for stopping by and learning a little bit more about me! If you
-          have any questions or want to chat about programming, feel free to send
-          me a message.
-        </div>
+        <article class="indent-4 mt-2 text-lg dark:text-zinc-300 text-zinc-700">
+          <p class="mb-4">
+            Hey there! I'm a programmer who's been learning the ropes for a
+            little over half a year now. I actually have some experience with
+            coding from when I was a kid - back then, I dabbled in creating
+            simple websites and forums using HTML and templates. But now, I'm
+            taking on bigger challenges and using more advanced tools like
+            React, Nextjs, and Typescript.
+          </p>
+          <p class="mb-4">
+            I'm really passionate about programming and love diving into new
+            projects and exploring different programming languages. I find it
+            incredibly satisfying to see an idea take shape through code and
+            then come to life as a functional program.
+          </p>
+          <p class="mb-4">
+            Of course, being a programmer can be frustrating at times - there's
+            always something new to learn, and there are inevitably going to be
+            bugs and glitches to troubleshoot. But the satisfaction of finally
+            solving a problem and getting everything working smoothly is
+            definitely worth it.
+          </p>
+          <p class="mb-4">
+            When I'm not coding, you can usually find me reading books or
+            catching up on the latest movies and TV shows. I'm also a big fan of
+            video games and enjoy spending some of my free time playing online
+            with friends.
+          </p>
+          <p>
+            Thanks for stopping by and learning a little bit more about me! If
+            you have any questions or want to chat about programming, feel free
+            to send me a message.
+          </p>
+        </article>
       </section>
       <section>
         <h2 class="font-semibold text-3xl mt-10">Skills</h2>
-        <div class="mt-2">
+        <div class="mt-2 dark:text-zinc-300 text-zinc-700 text-lg">
           <ul>
             <li>HTML</li>
             <li>CSS</li>
@@ -62,60 +75,4 @@ import Hero from "../components/Hero.astro";
   </div>
 </BaseLayout>
 
-<style>
-  .about {
-    display: flex;
-    flex-direction: column;
-    gap: 3.5rem;
-  }
 
-  img {
-    margin-top: 1.5rem;
-    border-radius: 1.5rem;
-    box-shadow: var(--shadow-md);
-  }
-
-  section {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    color: var(--gray-200);
-  }
-
-  .section-title {
-    grid-column-start: 1;
-    font-size: var(--text-xl);
-    color: var(--gray-0);
-  }
-
-  .content {
-    grid-column: 2 / 4;
-  }
-
-  .content :global(a) {
-    text-decoration: 1px solid underline transparent;
-    text-underline-offset: 0.25em;
-    transition: text-decoration-color var(--theme-transition);
-  }
-
-  .content :global(a:hover),
-  .content :global(a:focus) {
-    text-decoration-color: currentColor;
-  }
-
-  @media (min-width: 50em) {
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 60% 1fr;
-    }
-
-    .about > :global(:first-child) {
-      grid-column-start: 2;
-    }
-
-    section {
-      display: contents;
-      font-size: var(--text-lg);
-    }
-  }
-</style>
