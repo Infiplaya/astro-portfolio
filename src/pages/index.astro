@@ -5,11 +5,8 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 // Component Imports
-import CallToAction from "../components/CallToAction.astro";
 import Grid from "../components/Grid.astro";
 import Hero from "../components/Hero.astro";
-import Icon from "../components/Icon.astro";
-import Pill from "../components/Pill.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
 
 // Page section components
@@ -23,65 +20,49 @@ const projects = (await getCollection("work"))
 ---
 
 <BaseLayout>
-  <div class="flex flex-col items-center justify-center">
-    <div class="px-8 container mx-auto">
+  <div
+    class="flex flex-col px-8 xl:max-w-[1250px] xl:mx-auto items-center justify-center"
+  >
+    <div class="container mx-auto">
       <header
-        class="grid lg:grid-cols-2 gap-5 mt-12 lg:w-full lg:px-16 lg:items-center sm:mt-16 md:mt-20 lg:py-12"
+        class="grid lg:grid-cols-2 pt-12 lg:pt-28 justify-items-start gap-5 lg:items-center lg:w-full"
       >
         <Hero
-          title="Hello, my name is Paweł Sobaniec"
-          tagline="I am a Frontend Developer from Poland"
+          title={`Hello there! My name is ${" "} Paweł Sobaniec`}
+          tagline="I'm a programmer who's been learning the ropes for almost a year now. I love React, Next.js and building amazing websites. I'm always up for learning new things and tackling whatever challenges come my way."
         />
 
         <img
           alt="Paweł Sobaniec profile picture"
-          class="rounded-lg border lg:hidden border-slate-200 dark:border-slate-800 shadow-lg dark:shadow-slate-800 md:mx-auto bg-slate-100 dark:bg-slate-900 h-80 w-full sm:h-96 md:w-5/6 object-cover object-center mt-5"
+          class="rounded-lg lg:hidden shadow-lg shadow-zinc-300 dark:shadow-zinc-700 w-72 mx-auto object-cover object-center mt-5"
           src="/assets/profile.png"
         />
 
-        <div class="hidden lg:block lg:h-96 xl:h-[450px] relative">
+        <div
+          class="hidden lg:block lg:h-96 xl:h-[450px] lg:w-3/5 justify-self-end relative"
+        >
           <img
             alt="Paweł Sobaniec profile picture"
-            class="rounded-lg border absolute inset-0 w-full h-full border-slate-200 dark:border-slate-800 shadow-lg dark:shadow-slate-800 bg-slate-100 dark:bg-slate-900 object-cover object-center"
+            class="rounded-lg border absolute inset-0 w-full object-cover h-full border-zinc-200 dark:border-zinc-800 shadow-lg dark:shadow-zinc-800 bg-zinc-100 dark:bg-zinc-900 object-top"
             src="/assets/profile.png"
           />
         </div>
       </header>
 
-      <section class="mt-14 lg:mt-20 md:py-12 sm:py-8 px-8 lg:px-28 w-full">
-        <header class="flex flex-col text-center lg:text-left pb-5 gap-2 lg:gap-4">
-          <h3 class="font-bold text-3xl lg:text-4xl">About me</h3>
-          <p class="font-medium text-slate-600 dark:text-slate-300 sm:text-lg px-8 sm:px-12 md:px-16 lg:px-0 lg:text-xl">
-            I believe making projects is the best way to learn. Take a look at
-            them! <a
-              href="/about"
-              class="text-teal-500 hover:underline underline-offset-4"
-              >Learn more about me</a
-            >
-          </p>
-        </header>
-      </section>
-
       <Skills />
     </div>
 
-    <main
-      class="flex flex-col container mt-14 px-8 md:px-12 md:py-8 sm:px-8 sm:py-6 py-2 md:mt-16 lg:mt-20 lg:px-36"
-    >
+    <main class="flex flex-col mt-10 md:mt-14 w-full">
       <section>
-        <header class="flex flex-col text-center lg:text-left pb-5 gap-2 lg:gap-4">
+        <header class="flex flex-col text-center lg:text-left gap-2 lg:gap-4">
           <h3 class="font-bold text-3xl lg:text-4xl">Selected projects</h3>
-          <p class="font-medium text-slate-600 dark:text-slate-300 sm:text-lg px-8 sm:px-12 md:px-16 lg:px-0 lg:text-xl">
+          <p class="font-medium text-zinc-600 dark:text-zinc-300 sm:text-lg">
             I believe making projects is the best way to learn. Take a look at
-            them! <a
-              href="/about"
-              class="text-teal-500 hover:underline underline-offset-4"
-              >Learn more about me</a
-            >
+            them!
           </p>
         </header>
 
-        <div class="gallery">
+        <div>
           <Grid variant="offset">
             {
               projects.map((project) => (
@@ -92,13 +73,19 @@ const projects = (await getCollection("work"))
             }
           </Grid>
         </div>
-
-        <div class="mt-10 mb-10">
-          <CallToAction href="/work/">
-            View More
-            <Icon icon="arrow-right" size="1.2em" />
-          </CallToAction>
-        </div>
+        <a href="/work/">
+          <div class="relative group">
+            <div
+              class="absolute -z-10 -inset-0.5 lg:w-44 bg-gradient-to-r from-orange-600 to-lime-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"
+            >
+            </div>
+            <div
+              class="mt-10 mb-10 bg-zinc-900 p-3 lg:w-44 text-center rounded-lg"
+            >
+              View More
+            </div>
+          </div>
+        </a>
       </section>
     </main>
     <ContactCTA />

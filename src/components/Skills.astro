@@ -1,30 +1,45 @@
 ---
-import Icon from "./Icon.astro";
+import { Icon } from "astro-icon";
 ---
 
 <section
-  class="border border-slate-200 py-6 dark:border-slate-700 lg:px-16 lg:mx-16 sm:px-12 px-8 lg:py-12 md:px-8 rounded-lg flex flex-col lg:flex-row gap-10 mt-10 sm:mt-14 lg:mt-20"
+  class="border border-zinc-200 dark:border-zinc-700 p-10 rounded-lg mt-10 md:mt-14 lg:flex flex-row gap-5"
 >
   <div class="flex flex-col gap-2 lg:gap-4">
-    <Icon icon="terminal-window" />
-    <h2 class="font-bold text-2xl lg:text-4xl">React</h2>
-    <p class="dark:text-slate-300">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+    <Icon name="mdi:head-thinking-outline" class="w-12 text-orange-400" />
+    <h2
+      class="font-bold text-2xl lg:text-4xl text-slate-700 dark:text-slate-300"
+    >
+      Problem solving
+    </h2>
+    <p class="dark:text-zinc-300">
+      As a developer you need to be comfortable with solving problems and
+      critical thinking. I practice this skills by doing things.
     </p>
   </div>
   <div class="flex flex-col gap-2 lg:gap-4">
-    <Icon icon="trophy" />
-    <h2 class="font-bold text-2xl lg:text-4xl">Typescript</h2>
-    <p class="dark:text-slate-300">
-      Neque viverra justo nec ultrices dui. Est ultricies integer quis auctor
-      elit.
+    <Icon name="carbon:crop-growth" class="w-12 text-orange-400" />
+    <h2
+      class="font-bold text-2xl lg:text-4xl text-slate-700 dark:text-slate-300"
+    >
+      Growth mindset
+    </h2>
+    <p class="dark:text-zinc-300">
+      When I started learning coding I realized that as a programmer you never
+      stop learning new things. That's why it's very important to be curious and
+      have consistency.
     </p>
   </div>
   <div class="flex flex-col gap-2 lg:gap-4">
-    <Icon icon="strategy" />
-    <h2 class="font-bold text-2xl lg:text-4xl">NextJS</h2>
-    <p class="dark:text-slate-300">
-      Urna porttitor rhoncus dolor purus non enim praesent ornare.
+    <Icon name="icon-park-outline:respect" class="w-12 text-orange-400" />
+    <h2
+      class="font-bold text-2xl lg:text-4xl text-slate-700 dark:text-slate-300"
+    >
+      Empathy
+    </h2>
+    <p class="dark:text-zinc-300">
+      It's important to treat other people with kindness and respect they
+      deserve.
     </p>
   </div>
 </section>

@@ -3,50 +3,52 @@
 // https://docs.astro.build/en/core-concepts/layouts/
 
 // Component Imports
-import MainHead from '../components/MainHead.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
+import MainHead from "../components/MainHead.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 
 // Import fonts
-import '@fontsource/montserrat/400.css';
-import '@fontsource/montserrat/variable.css'
+import "@fontsource/montserrat/400.css";
+import "@fontsource/montserrat/variable.css";
 
 interface Props {
-	title?: string | undefined;
-	description?: string | undefined;
+  title?: string | undefined;
+  description?: string | undefined;
 }
 
 const { title, description } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<MainHead title={title} description={description} />
-	</head>
-	<body class="bg-slate-50  dark:bg-slate-900 text-slate-900 dark:text-slate-50">
-		<div>
-			<Nav />
-			<slot />
-			<Footer />
-		</div>
+  <head>
+    <MainHead title={title} description={description} />
+  </head>
+  <body class="bg-zinc-50 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50">
+    <div>
+      <Nav />
+      <slot />
+      <Footer />
+    </div>
 
-		<script>
-			// Add “loaded” class once the document has completely loaded.
-			addEventListener('load', () => document.documentElement.classList.add('loaded'));
-		</script>
-	</body>
+    <script>
+      // Add “loaded” class once the document has completely loaded.
+      addEventListener("load", () =>
+        document.documentElement.classList.add("loaded")
+      );
+    </script>
+  </body><script>
+    const blob = document.getElementById("blob");
+
+    document.body.onpointermove = (event) => {
+      const { clientX, clientY } = event;
+
+      blob!.animate(
+        {
+          left: `${clientX}px`,
+          top: `${clientY}px`,
+        },
+        { duration: 3000, fill: "forwards" }
+      );
+    };
+  </script>
 </html>
-
-
-<script>
-	const blob = document.getElementById("blob");
-
-document.body.onpointermove = event => { 
-  const { clientX, clientY } = event;
-  
-  blob!.animate({
-    left: `${clientX}px`,
-    top: `${clientY}px`
-  }, { duration: 3000, fill: "forwards" });
-}
-</script>

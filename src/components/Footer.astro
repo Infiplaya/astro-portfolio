@@ -1,18 +1,25 @@
 ---
-import Icon from './Icon.astro';
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="py-5 dark:text-slate-400 text-slate-700 border-t border-slate-200 dark:border-slate-700 md:flex md:items-center md:justify-between">
-	<div class="p-10 flex gap-3 flex-col items-center md:flex-row">
-		<p class="flex gap-1 items-center">
-			Built with
-				<a href="https://astro.build/" class="flex gap-2 items-center align-middle">Astro <Icon icon="rocket-launch" classNames="dark:stroke-slate-400 stroke-slate-700" /></a>
-		</p>
-		<p>&copy; {currentYear} Paweł Sobaniec</p>
-	</div>
-	<p class="flex p-5 justify-center gap-3">
-		<a href="https://cryptosito.vercel.app" class="hover:underline underline-offset-4" target="_blank">Cryptosito</a>
-		<a href="https://github.com/infiplaya" class="hover:underline underline-offset-4" target="_blank"> GitHub</a>
-	</p>
+<footer
+  class="py-5 dark:text-zinc-400 text-zinc-700 border-t border-zinc-200 dark:border-zinc-700 md:flex md:items-center md:justify-between mt-10"
+>
+  <div class="p-10 flex gap-3 flex-col items-center md:flex-row">
+    <p>&copy; {currentYear} Paweł Sobaniec</p>
+  </div>
+  <p class="flex p-5 justify-center gap-3">
+    <a
+      href="https://cryptosito.vercel.app"
+      class="hover:underline underline-offset-4"
+      target="_blank">Cryptosito</a
+    >
+    <a
+      href="https://github.com/infiplaya"
+      class="hover:underline underline-offset-4"
+      target="_blank"
+    >
+      GitHub</a
+    >
+  </p>
 </footer>

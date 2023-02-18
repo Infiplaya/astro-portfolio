@@ -1,5 +1,5 @@
 ---
-import Icon, { Props as IconProps } from "./Icon.astro";
+import { Icon } from "astro-icon";
 import ThemeToggle from "./ThemeToggle.astro";
 
 /** Main menu items */
@@ -7,21 +7,6 @@ const textLinks: { label: string; href: string }[] = [
   { label: "Home", href: "/" },
   { label: "Work", href: "/work/" },
   { label: "About", href: "/about/" },
-];
-
-/** Icon links to social media — edit these with links to your profiles! */
-const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
-  {
-    label: "Twitter",
-    href: "https://twitter.com/sobanpablo",
-    icon: "twitter-logo",
-  },
-  { label: "Twitch", href: "https://twitch.tv/noctate12", icon: "twitch-logo" },
-  {
-    label: "GitHub",
-    href: "https://github.com/infiplaya",
-    icon: "github-logo",
-  },
 ];
 ---
 
@@ -34,18 +19,18 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
       Paweł Sobaniec
     </a>
     <menu-button
-      class="flex items-center md:hidden rounded-lg p-1 dark:hover:bg-slate-700"
+      class="flex items-center md:hidden rounded-lg p-1 dark:hover:bg-zinc-700"
     >
       <template>
         <button class="menu-button" aria-expanded="false">
           <span class="sr-only">Menu</span>
-          <Icon icon="list" />
+          <Icon class="w-7 h-7 dark:text-slate-100" name="uil:bars" />
         </button>
       </template>
     </menu-button>
 
     <ul
-      class="hidden md:mx-auto w-64 md:flex justify-center gap-3 dark:bg-slate-700/50 backdrop-blur-lg bg-slate-200 p-4 rounded-lg"
+      class="hidden md:mx-auto w-64 md:flex justify-center gap-3 dark:bg-zinc-700/50 backdrop-blur-lg bg-zinc-200 p-4 rounded-lg"
     >
       {
         textLinks.map(({ label, href }) => (
@@ -53,7 +38,7 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
             <a
               aria-current={Astro.url.pathname === href}
               class:list={[
-                "font-semibold text-slate-800 dark:text-slate-200 rounded-lg hover:bg-teal-500 dark:hover:bg-teal-600 p-3",
+                "font-semibold text-zinc-800 dark:text-zinc-200 rounded-lg hover:bg-orange-500 dark:hover:bg-orange-600 p-3",
                 {
                   active:
                     Astro.url.pathname === href ||
@@ -71,17 +56,13 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
     </ul>
 
     <div class="hidden md:flex gap-3">
-      {
-        iconLinks.map(({ href, icon, label }) => (
-          <a href={href} class="social">
-            <span class="sr-only">{label}</span>
-            <Icon
-              icon={icon}
-              classNames="hover:stroke-teal-500 dark:hover:stroke-teal-500"
-            />
-          </a>
-        ))
-      }
+      <a href="https://github.com/infiplaya">
+        <span class="sr-only">Github</span>
+        <Icon
+          class="dark:text-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded-2xl p-1 text-zinc-800 w-9 h-9 subpixel-antialiased"
+          name="mdi:github"
+        />
+      </a>
       <div>
         <ThemeToggle />
       </div>
@@ -89,7 +70,7 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
   </div>
   <div
     id="menu-content"
-    class="bg-slate-100 dark:bg-slate-800 lg:hidden rounded-lg z-10 absolute w-full"
+    class="bg-zinc-100 dark:bg-zinc-800 lg:hidden rounded-lg z-10 absolute w-full"
   >
     <ul class="flex flex-col gap-3 pt-5 pb-10 pl-5">
       {
@@ -98,7 +79,7 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
             <a
               aria-current={Astro.url.pathname === href}
               class:list={[
-                "font-semibold text-slate-800 dark:text-slate-200",
+                "font-semibold text-zinc-800 dark:text-zinc-200",
                 {
                   active:
                     Astro.url.pathname === href ||
@@ -115,29 +96,26 @@ const iconLinks: { label: string; href: string; icon: IconProps["icon"] }[] = [
       }
     </ul>
     <div
-      class="px-5 py-5 flex justify-between border-t border-slate-200 dark:border-slate-700"
+      class="px-5 py-5 flex justify-between border-t border-zinc-200 dark:border-zinc-700"
     >
       <div class="flex gap-3">
-        {
-          iconLinks.map(({ href, icon, label }) => (
-            <a href={href} class="social">
-              <span class="sr-only">{label}</span>
-              <Icon icon={icon} />
-            </a>
-          ))
-        }
+        <a href="https://github.com/infiplaya">
+          <span class="sr-only">Github</span>
+          <Icon
+            class="dark:text-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded-lg p-1 text-zinc-800 w-7 h-7 subpixel-antialiased"
+            name="mdi:github"
+          />
+        </a>
       </div>
 
-      <div>
-        <ThemeToggle />
-      </div>
+      <ThemeToggle />
     </div>
   </div>
 </nav>
 
 <style>
   .active {
-    @apply text-slate-900;
+    @apply text-zinc-900;
   }
 </style>
 

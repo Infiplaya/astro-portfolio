@@ -10,6 +10,6 @@ const { data, slug } = Astro.props.project;
 
 <a href={`/work/${slug}`} class="relative mt-10">
 	<span class="text-lg font-semibold text-slate-900 absolute top-5 left-5 bg-white/20 py-2 px-3 rounded-lg">{data.title}</span>
-	<img src={data.img} alt={data.img_alt || ''} loading="lazy" decoding="async" class="h-56 lg:h-72 w-full object-cover rounded-lg" />
+	<img src={data.img} alt={data.img_alt || ''} loading="lazy" decoding="async" class="h-56 lg:h-72 xl:h-96  w-full object-cover rounded-lg" />
 </a>
 
