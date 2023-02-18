@@ -46,7 +46,6 @@ const textLinks: { label: string; href: string }[] = [
                 "block transition relative text-zinc-800 dark:text-zinc-100 py-3 px-4 hover:text-orange-500 dark:hover:text-orange-400 rounded-lg",
               ]}
               href={href}
-              target="_blank"
             >
               {label}
               {Astro.url.pathname === href ||
@@ -84,7 +83,6 @@ const textLinks: { label: string; href: string }[] = [
               aria-current={Astro.url.pathname === href}
               class="font-semibold text-zinc-800 dark:text-zinc-200"
               href={href}
-              target="_blank"
             >
               {label}
             </a>
