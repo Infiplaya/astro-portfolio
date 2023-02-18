@@ -1,7 +1,7 @@
 ---
 title: Personal Blog
 publishDate: 2019-10-02 00:00:00
-img: /assets/blog.png
+img: /assets/blog.webp
 img_alt: Place where I will occasionally post some blogs.
 link: https://psoban.vercel.app/
 github: https://github.com/Infiplaya/astro-blog

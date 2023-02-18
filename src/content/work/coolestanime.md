@@ -1,7 +1,7 @@
 ---
 title: Coolest Anime
 publishDate: 2020-03-02 00:00:00
-img: /assets/coolestchar.png
+img: /assets/coolestchar.webp
 img_alt: Screenshot of coolest anime website
 link: https://coolestchar.vercel.app/
 github: https://github.com/infiplaya/coolestanime

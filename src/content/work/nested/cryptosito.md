@@ -1,7 +1,7 @@
 ---
 title: Cryptosito
 publishDate: 2020-03-04 00:00:00
-img: /assets/cryptosito.png
+img: /assets/cryptosito.webp
 img_alt: Screenshot of homepage of Cryptosito
 link: https://cryptosito.vercel.app/
 github: https://github.com/infiplaya/cryptosito
