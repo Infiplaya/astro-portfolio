@@ -1,15 +1,23 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import type { CollectionEntry } from "astro:content";
 
 interface Props {
-	project: CollectionEntry<'work'>;
+  project: CollectionEntry<"work">;
 }
 
 const { data, slug } = Astro.props.project;
 ---
 
 <a href={`/work/${slug}`} class="relative mt-10">
-	<span class="text-lg font-semibold text-zinc-200 absolute top-5 left-5 bg-zinc-900 py-2 px-3 rounded-lg">{data.title}</span>
-	<img src={data.img} alt={data.img_alt || ''} loading="lazy" decoding="async" class="h-56 lg:h-72 xl:h-96  w-full object-cover rounded-lg" />
+  <span
+    class="text-lg font-semibold text-zinc-200 absolute top-5 left-5 bg-zinc-900 py-2 px-3 rounded-lg"
+    >{data.title}</span
+  >
+  <img
+    src={data.img}
+    alt={data.img_alt || ""}
+    loading="lazy"
+    decoding="async"
+    class="w-full h-full shadow-md dark:shadow-zinc-700 rounded-lg"
+  />
 </a>
-

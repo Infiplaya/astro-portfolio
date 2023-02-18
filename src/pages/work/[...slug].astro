@@ -35,10 +35,20 @@ const { Content } = await entry.render();
           <a class="hover:underline underline-offset-4" href="/work/">Work</a>
           <Hero title={entry.data.title}>
             <div>
-              <div class="flex gap-5 mt-3">
-                {entry.data.tags.map((t) => <div class="lg:px-6 px-4 py-2 rounded-lg bg-indigo-500">{t}</div>)}
+              <div class="flex justify-center lg:justify-start gap-5 mt-3">
+                {
+                  entry.data.tags.map((t) => (
+                    <div class="lg:px-6 px-4 py-2 rounded-lg bg-indigo-500">
+                      {t}
+                    </div>
+                  ))
+                }
               </div>
-              <p class="mt-5 lg:text-lg">{entry.data.description}</p>
+              <p
+                class="mt-5 lg:text-lg indent-4 font-semibold text-zinc-700 dark:text-zinc-200"
+              >
+                {entry.data.description}
+              </p>
             </div>
           </Hero>
         </div>
@@ -47,10 +57,16 @@ const { Content } = await entry.render();
         <div class="p-5">
           {
             entry.data.img && (
-              <img src={entry.data.img} alt={entry.data.img_alt || ""} class="rounded-lg lg:w-3/4 mx-auto" />
+              <img
+                src={entry.data.img}
+                alt={entry.data.img_alt || ""}
+                class="rounded-lg lg:w-3/4 w-full shadow-lg dark:shadow-zinc-700 mx-auto"
+              />
             )
           }
-          <div class="prose-zinc mt-10 xl:text-lg prose-h1:text-3xl prose-headings:my-4 prose-h2:text-2xl prose-h3:text-xl prose-headings:font-bold w-3/4 mx-auto">
+          <div
+            class="prose-zinc prose-p:mt-4 mt-10 prose-p:text-slate-200 prose-p:leading-relaxed prose-h1:text-3xl prose-headings:my-4 prose-h2:text-2xl prose-h3:text-xl prose-headings:font-bold lg:w-3/4 mx-auto"
+          >
             <Content />
           </div>
         </div>
@@ -59,4 +75,3 @@ const { Content } = await entry.render();
     <ContactCTA />
   </div>
 </BaseLayout>
-

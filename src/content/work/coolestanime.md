@@ -1,14 +1,14 @@
 ---
-title: Markdown Mystery Tour
+title: Coolest Anime
 publishDate: 2020-03-02 00:00:00
 img: /assets/stock-1.jpg
-img_alt: Iridescent ripples of a bright blue and pink liquid
+img_alt: Screenshot of coolest anime website
 description: |
-  We designed a whodunnit-style game to introduce Markdown formatting. Suspense — suspicion — syntax!
+  Presenting to you Coolest Anime - a place where you can vote for coolest animes and characters. Inspired by roundest.
 tags:
-  - Design
-  - Dev
-  - User Testing
+  - React
+  - Nextjs
+  - Fullstack
 ---
 
 ## Level-two heading
