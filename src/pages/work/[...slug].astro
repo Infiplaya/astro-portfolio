@@ -33,13 +33,13 @@ const { Content } = await entry.render();
     <div>
       <header>
         <div>
-          <a class="hover:underline underline-offset-4" href="/work/">Work</a>
+          <a class="hover:underline underline-offset-4 mb-4" href="/work/">Work</a>
           <Hero title={entry.data.title}>
             <div>
               <div class="flex justify-center lg:justify-start gap-5 mt-3">
                 {
                   entry.data.tags.map((t) => (
-                    <div class="lg:px-6 px-4 py-2 rounded-lg bg-indigo-500 text-zinc-50">
+                    <div class="lg:px-6 px-4 py-2 mt-4 rounded-lg bg-indigo-500 text-zinc-50">
                       {t}
                     </div>
                   ))
@@ -103,7 +103,7 @@ const { Content } = await entry.render();
             )
           }
           <div
-            class="prose-zinc prose-p:text-zinc-800 prose-p:indent-4 dark:prose-p:text-zinc-200 prose-p:mt-4 mt-10 prose-p:leading-relaxed prose-h1:text-3xl prose-headings:my-4 prose-h2:text-2xl prose-h3:text-xl prose-headings:font-bold lg:w-3/4 mx-auto"
+            class="prose-zinc prose-p:text-zinc-800 prose-p:indent-4 dark:prose-p:text-zinc-200 prose-p:mt-4 mt-10 prose-h1:text-3xl prose-headings:my-4 prose-h2:text-2xl prose-h3:text-xl prose-headings:font-bold lg:w-3/4 mx-auto"
           >
             <Content />
           </div>
