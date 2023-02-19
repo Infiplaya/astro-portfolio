@@ -11,19 +11,17 @@ tags:
   - Astro
   - Tailwindcss
 ---
+## Introduction
+As a developer, I always want to make sure that my blog website is up-to-date and using the latest technologies. Recently, I decided to rebuild my website from Next.js to Astro and I wanted to share my experience.
 
-As a website owner, you always want to make sure that your website is up-to-date and using the latest technologies. This includes the framework or platform that you use to build your website. In this article, we’ll be discussing the experience of rebuilding a portfolio/blog website from Next.js to Astro.
+### Why move to astro?
+Next.js is a popular framework for building React applications, but I decided to switch to Astro because it promises faster build times and better performance. I wanted my website to be faster and more efficient, so Astro seemed like a good choice.
 
-Next.js is a popular framework for building React applications, including server-side rendering and static site generation. However, Astro is a new framework that promises faster build times and better performance. So, why did we decide to switch from Next.js to Astro?
+The first reason I decided to switch to Astro was because of its faster build times. With Next.js, I noticed that my build times were becoming slower as my website grew larger. This was because Next.js generates every page on every build, even if the content hasn’t changed. Astro, on the other hand, only rebuilds pages that have been changed, making the build process much faster.
 
-Firstly, Astro has faster build times. With Next.js, we noticed that our build times were becoming slower as our website grew larger. This is because Next.js generates every page on every build, even if the content hasn’t changed. Astro, on the other hand, only rebuilds pages that have been changed, making the build process much faster.
+The second reason I switched to Astro was because it's more performant. Astro uses a lightweight runtime that’s smaller than Next.js, which means that my website loads faster for users. Additionally, Astro only loads the JavaScript required for each page, reducing the overall page size and improving performance.
 
-Secondly, Astro is more performant. Astro uses a lightweight runtime that’s smaller than Next.js, which means that our website loads faster for users. Additionally, Astro only loads the JavaScript required for each page, reducing the overall page size and improving performance.
+Lastly, I found that Astro has a simpler syntax. While Next.js is built on top of React, Astro is based on standard HTML, CSS, and JavaScript. This meant that there was less of a learning curve for me, and I was able to adapt quickly. Astro also provides a component system, which made it easy for me to build and reuse components across pages.
 
-Lastly, Astro has a simpler syntax. While Next.js is built on top of React, Astro is based on standard HTML, CSS, and JavaScript. This means that there’s less of a learning curve for developers who are familiar with web development basics. Astro also provides a component system, which makes it easy to build and reuse components across pages.
-
-The process of migrating our website from Next.js to Astro was relatively straightforward. We started by creating a new Astro project and copying over the necessary files from our Next.js project. We then had to update the syntax and make a few minor changes to the code to align with Astro’s component system.
-
-One thing we did notice was that there was a slight difference in the way Astro handles CSS. Astro uses a CSS-in-JS approach, which meant we had to make a few changes to our CSS files. However, the changes were minor, and we were able to adapt quickly.
-
-In conclusion, rebuilding our portfolio/blog website from Next.js to Astro was a positive experience. The switch to Astro resulted in faster build times, improved performance, and simpler syntax. If you’re considering rebuilding your website, we highly recommend giving Astro a try.
+## Summary
+The process of migrating my website from Next.js to Astro was relatively straightforward. I started by creating a new Astro project and copying over the necessary files from my Next.js project. I then had to update the syntax and make a few minor changes to the code to align with Astro’s component system.
