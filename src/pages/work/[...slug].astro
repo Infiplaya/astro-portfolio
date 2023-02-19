@@ -28,12 +28,14 @@ const { Content } = await entry.render();
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>
   <div
-    class="container mx-auto xl:max-w-[1250px] px-4 md:px-12 lg:px-20 py-4 md:py-8 lg:py-12"
+    class="container mx-auto xl:max-w-[1250px] px-8 md:px-12 lg:px-20 py-4 md:py-8 lg:py-12"
   >
     <div>
       <header>
         <div>
-          <a class="hover:underline underline-offset-4 mb-4" href="/work/">Work</a>
+          <a class="hover:underline underline-offset-4 mb-4" href="/work/"
+            >Work</a
+          >
           <Hero title={entry.data.title}>
             <div>
               <div class="flex justify-center lg:justify-start gap-5 mt-3">
@@ -88,23 +90,21 @@ const { Content } = await entry.render();
           </Hero>
         </div>
       </header>
-      <main class="mt-10">
-        <div class="p-5">
+      <main class="mt-10 max-w-3xl mx-auto">
+        <div>
           {
             entry.data.img && (
               <img
                 src={entry.data.img}
                 alt={entry.data.img_alt || ""}
-                class="rounded-lg lg:w-3/4 w-full shadow-lg dark:shadow-zinc-700 mx-auto"
+                class="rounded-lg w-full shadow-lg dark:shadow-zinc-700 mx-auto"
                 width="1472"
                 height="871"
                 loading="lazy"
               />
             )
           }
-          <div
-            class="prose-zinc prose-p:text-zinc-800 prose-p:indent-4 dark:prose-p:text-zinc-200 prose-p:mt-4 mt-10 prose-h1:text-3xl prose-headings:my-4 prose-h2:text-2xl prose-h3:text-xl prose-headings:font-bold lg:w-3/4 mx-auto"
-          >
+          <div class="prose-zinc mt-10 indent-4 text-base dark:prose-invert  mx-auto">
             <Content />
           </div>
         </div>
