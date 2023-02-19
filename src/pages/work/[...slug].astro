@@ -28,7 +28,7 @@ const { Content } = await entry.render();
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>
   <div
-    class="container mx-auto xl:max-w-[1250px] px-8 md:px-12 lg:px-20 py-4 md:py-8 lg:py-12"
+    class="max-w-4xl mx-auto px-8 md:px-12 lg:px-20 py-4 md:py-8 lg:py-12"
   >
     <div>
       <header>
@@ -58,13 +58,13 @@ const { Content } = await entry.render();
                   entry.data.link && (
                     <a href={entry.data.link}>
                       <div class="flex items-center gap-2 mt-5">
+                        <p class="dark:text-orange-300 font-semibold text-orange-600">
+                          Live version
+                        </p>
                         <Icon
                           name="mdi:link-box-variant"
-                          class="w-6 h-6 text-orange-300"
+                          class="w-6 h-6 dark:text-orange-300 text-orange-600"
                         />
-                        <p class="dark:text-orange-300 font-semibold text-orange-700">
-                          {entry.data.link}
-                        </p>
                       </div>
                     </a>
                   )
@@ -74,13 +74,13 @@ const { Content } = await entry.render();
                   entry.data.github && (
                     <a href={entry.data.github}>
                       <div class="flex items-center gap-2 mt-5">
+                        <p class="text-orange-600 font-semibold dark:text-orange-300">
+                          Github
+                        </p>
                         <Icon
                           name="mdi:github"
-                          class="w-6 h-6 text-orange-300"
+                          class="w-6 h-6 text-orange-600 dark:text-orange-300"
                         />
-                        <p class="dark:text-orange-300 font-semibold text-orange-700">
-                          {entry.data.github}
-                        </p>
                       </div>
                     </a>
                   )
@@ -90,23 +90,23 @@ const { Content } = await entry.render();
           </Hero>
         </div>
       </header>
-      <main class="mt-10 max-w-3xl mx-auto">
+      <main class="mt-10">
         <div>
           {
             entry.data.img && (
               <img
                 src={entry.data.img}
                 alt={entry.data.img_alt || ""}
-                class="rounded-lg w-full shadow-lg dark:shadow-zinc-700 mx-auto"
+                class="rounded-lg w-full shadow-lg dark:shadow-zinc-700"
                 width="1472"
                 height="871"
                 loading="lazy"
               />
             )
           }
-          <div class="prose-zinc mt-10 indent-4 text-base dark:prose-invert  mx-auto">
+          <article class="indent-4 mt-10 prose prose-zinc dark:prose-invert">
             <Content />
-          </div>
+          </article>
         </div>
       </main>
     </div>
