@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@astrojs/tailwind': ^3.0.1
   '@fontsource/montserrat': ^4.5.14
+  '@fontsource/open-sans': ^4.5.14
   '@tailwindcss/typography': ^0.5.9
   '@types/react': ^18.0.28
   '@types/react-dom': ^18.0.11
@@ -17,6 +18,7 @@ specifiers:
 dependencies:
   '@astrojs/tailwind': 3.0.1_drorp46nleyzwiktdofkcoki4q
   '@fontsource/montserrat': 4.5.14
+  '@fontsource/open-sans': 4.5.14
   '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.6
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
@@ -579,6 +581,10 @@ packages:
 
   /@fontsource/montserrat/4.5.14:
     resolution: {integrity: sha512-fTvrteVzuFUePhr4QYBGoK8G/YHLJ3IhF1HhKg0AxcFvZajJT7rM7ULdmKLSd2PkX44R3aaFZq1zDbmjbGGI+w==}
+    dev: false
+
+  /@fontsource/open-sans/4.5.14:
+    resolution: {integrity: sha512-mBXIIETBlW8q/ocuUN0hyGow2iuf75hQEHQt8R/RJ/HcphVbLg8KB7pHYGbFGDqs75W+SWvTC7JkVeAjT65BuQ==}
     dev: false
 
   /@jridgewell/gen-mapping/0.1.1:

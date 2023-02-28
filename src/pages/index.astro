@@ -20,31 +20,51 @@ const projects = (await getCollection("work"))
 ---
 
 <BaseLayout>
-  <div
-    class="flex flex-col px-8 xl:max-w-[1250px] xl:mx-auto items-center justify-center"
-  >
-    <div class="container mx-auto">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mt-10 md:mt-20 p-3">
       <header
-        class="grid lg:grid-cols-2 pt-12 lg:pt-28 justify-items-start gap-5 lg:items-center lg:w-full"
+        class="flex flex-col-reverse lg:flex-row justify-center items-center gap-5 lg:items-center lg:w-full"
       >
-        <Hero
-          title={`Hello there! My name is ${" "} Paweł Sobaniec`}
-          tagline="I am a passionate web developer who is eager to start their career in programming. I'm constantly seeking out opportunities to grow and improve my craft. I believe that technology has the power to transform people's lives, and I'm committed to using my skills to create impactful and user-friendly digital experiences. Let's work together to bring your web vision to life!"
-          href="/about"
-        />
+        <div
+          class="lg:flex-1 flex text-center lg:text-left flex-col justify-center lg:items-start"
+        >
+          <h2 class="text-3xl lg:text-4xl font-bold tracking-tighter">
+            Hello There!
+          </h2>
+          <h1 class="text-4xl lg:text-5xl font-bold tracking-tighter">
+            My name is <span
+              class="decoration-orange-500 decoration-dashed underline underline-offset-8"
+              >Paweł Sobaniec</span
+            >
+          </h1>
+          <p class="mt-5 text-lg">
+            I am a passionate web developer who is eager to start their career
+            in programming. I'm constantly seeking out opportunities to grow and
+            improve my craft. I believe that technology has the power to
+            transform people's lives, and I'm committed to using my skills to
+            create impactful and user-friendly digital experiences. Let's work
+            together to bring your web vision to life!
+            <a
+              href="/about"
+              class="font-bold text-orange-600 dark:text-orange-400 dark:hover:text-orange-300 hover:text-orange-500"
+            >
+              Check about me
+            </a>
+          </p>
+        </div>
 
         <img
           alt="Paweł Sobaniec profile picture"
-          class="rounded-lg lg:hidden shadow-lg shadow-zinc-300 dark:shadow-zinc-700 w-72 mx-auto object-cover object-center mt-5"
+          class="rounded-full lg:hidden w-36 h-36 shadow-md shadow-zinc-200 dark:shadow-zinc-700"
           src="/assets/profile.webp"
         />
 
         <div
-          class="hidden lg:block lg:h-96 xl:h-[500px] xl:w-[500px] lg:w-96 justify-self-end relative"
+          class="hidden lg:block lg:h-96 xl:h-[500px] xl:w-[500px] lg:flex-1 lg:w-96 justify-self-end relative"
         >
           <img
             alt="Paweł Sobaniec profile picture"
-            class="rounded-lg border absolute inset-0 w-full object-cover h-full border-zinc-200 dark:border-zinc-800 shadow-lg dark:shadow-zinc-700 bg-zinc-100 dark:bg-zinc-900 object-top"
+            class="rounded-xl border absolute inset-0 w-full object-cover h-full border-zinc-200 dark:border-zinc-800 shadow-lg dark:shadow-zinc-700 bg-zinc-100 dark:bg-zinc-900 object-top"
             src="/assets/profile.webp"
             width="1600"
             height="1600"
@@ -57,17 +77,17 @@ const projects = (await getCollection("work"))
       <Skills />
     </div>
 
-    <main class="flex flex-col mt-10 md:mt-14 w-full">
-      <section>
+    <main class="mt-20 w-full">
+      <section class="p-3">
         <header class="flex flex-col text-center lg:text-left gap-2 lg:gap-4">
           <h3 class="font-bold text-3xl lg:text-4xl">Selected projects</h3>
-          <p class="font-medium text-zinc-600 dark:text-zinc-300">
+          <p class="text-lg">
             I believe making projects is the best way to learn. Take a look at
             them!
           </p>
         </header>
 
-        <div>
+        <div class="mt-5">
           <Grid variant="offset">
             {
               projects.map((project, index) => (

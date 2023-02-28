@@ -6,75 +6,76 @@ import Hero from "../components/Hero.astro";
 ---
 
 <BaseLayout title="About | Paweł Sobaniec" description="About Paweł Sobaniec">
-  <div class="max-w-4xl mx-auto px-8 md:px-12 lg:px-20 py-4 md:py-8 lg:py-12">
-    <main>
-      <Hero
-        title="About"
-        tagline="Thanks for stopping by. It means a lot for me. Read below to learn more about myself and my background."
-      />
-      <img
-        src="/assets/avatar.webp"
-        class="rounded-lg shadow-lg shadow-zinc-400 mx-auto dark:shadow-zinc-700 mt-10"
-        width="500"
-        height="500"
-        loading="lazy"
-        decoding="async"
-      />
+  <div class="max-w-3xl mx-auto px-8 mt-10">
+    <Hero
+      title="About"
+      tagline="Thanks for stopping by. It means a lot for me. Read below to learn more about myself and my background."
+    />
+    <img
+      src="/assets/avatar.webp"
+      class="rounded-lg shadow-lg shadow-zinc-400 dark:shadow-zinc-700 mt-10"
+      width="500"
+      height="500"
+      loading="lazy"
+      decoding="async"
+    />
 
-      <section class="max-w-3xl mx-auto">
-        <h2 class="font-semibold text-3xl mt-10">Background</h2>
-        <article class="indent-4 mt-5 prose prose-zinc dark:prose-invert">
-          <p>
-            Hey there! I'm a programmer who's been learning the ropes for a
-            little over half a year now. I actually have some experience with
-            coding from when I was a kid - back then, I dabbled in creating
-            simple websites and forums using HTML and templates. But now, I'm
-            taking on bigger challenges and using more advanced tools like
-            React, Nextjs, and Typescript.
-          </p>
-          <p>
-            I'm really passionate about programming and love diving into new
-            projects and exploring different programming languages. I find it
-            incredibly satisfying to see an idea take shape through code and
-            then come to life as a functional program.
-          </p>
-          <p>
-            Of course, being a programmer can be frustrating at times - there's
-            always something new to learn, and there are inevitably going to be
-            bugs and glitches to troubleshoot. But the satisfaction of finally
-            solving a problem and getting everything working smoothly is
-            definitely worth it.
-          </p>
-          <p>
-            When I'm not coding, you can usually find me reading books or
-            catching up on the latest movies and TV shows. I'm also a big fan of
-            video games and enjoy spending some of my free time playing online
-            with friends.
-          </p>
-          <p>
-            Again, thanks for stopping by and learning a little bit more about
-            me! If you have any questions or want to chat about programming,
-            feel free to send me a message.
-          </p>
-        </article>
-      </section>
-      <section class="max-w-3xl mx-auto prose prose-zinc dark:prose-invert mt-10">
-        <h2 class="font-semibold text-3xl -mb-5">Tech I Use</h2>
-        <div class="mt-2 dark:text-zinc-300 text-zinc-700">
-          <ul class="p-3">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Javascript / Typescript</li>
-            <li>React</li>
-            <li>Nextjs</li>
-            <li>Graphql</li>
-            <li>Prisma</li>
-            <li>TRPC</li>
-            <li>Python</li>
-          </ul>
-        </div>
-      </section>
-    </main>
+    <section class="mt-20">
+      <h2 class="font-semibold text-3xl mt-10">Background</h2>
+      <article class="mt-5 prose prose-zinc dark:prose-invert">
+        <p>
+          Hey there! I'm a programmer who's been learning the ropes for a little
+          over half a year now. I actually have some experience with coding from
+          when I was a kid - back then, I dabbled in creating simple websites
+          and forums using HTML and templates. But now, I'm taking on bigger
+          challenges and using more advanced tools like React, Nextjs, and
+          Typescript.
+        </p>
+        <p>
+          I'm really passionate about programming and love diving into new
+          projects and exploring different programming languages. I find it
+          incredibly satisfying to see an idea take shape through code and then
+          come to life as a functional program.
+        </p>
+        <p>
+          Of course, being a programmer can be frustrating at times - there's
+          always something new to learn, and there are inevitably going to be
+          bugs and glitches to troubleshoot. But the satisfaction of finally
+          solving a problem and getting everything working smoothly is
+          definitely worth it.
+        </p>
+        <p>
+          When I'm not coding, you can usually find me reading books or catching
+          up on the latest movies and TV shows. I'm also a big fan of video
+          games and enjoy spending some of my free time playing online with
+          friends.
+        </p>
+        <p>
+          Again, thanks for stopping by and learning a little bit more about me!
+          If you have any questions or want to chat about programming, feel free
+          to send me a message.
+        </p>
+      </article>
+    </section>
+
+    <section
+      class="prose prose-zinc dark:prose-invert mt-10"
+    >
+      <h2 class="font-semibold text-3xl -mb-5">Tech I Use</h2>
+      <div class="mt-2 dark:text-zinc-300 text-zinc-700">
+        <ul class="p-3">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Javascript / Typescript</li>
+          <li>React</li>
+          <li>Nextjs</li>
+          <li>Graphql</li>
+          <li>Prisma</li>
+          <li>TRPC</li>
+          <li>Python</li>
+        </ul>
+      </div>
+    </section>
 
     <ContactCTA />
   </div>

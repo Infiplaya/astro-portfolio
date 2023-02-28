@@ -21,35 +21,37 @@ const projects = (await getCollection("work")).sort(
     class="container mx-auto xl:max-w-[1250px] px-8 md:px-12 lg:px-20 py-4 md:py-8 lg:py-12"
   >
     <main class="lg:mt-20 mt-10">
-      <Hero
-        title="My Work"
-        tagline="See my most recent projects below to get an idea of my past experience."
-      />
-      <Grid variant="offset">
-        {
-          projects.map((project) => (
-            <li>
-              <PortfolioPreview project={project} />
-            </li>
-          ))
-        }
-      </Grid>
+      <div class="space-y-20">
+        <Hero
+          title="My Work"
+          tagline="See my most recent projects below to get an idea of my past experience."
+        />
+        <Grid variant="offset">
+          {
+            projects.map((project) => (
+              <li>
+                <PortfolioPreview project={project} />
+              </li>
+            ))
+          }
+        </Grid>
 
-      <section class="my-10">
-        <h2 class="text-3xl font-semibold text-center lg:text-left">
-          Other work
-        </h2>
-        <p
-          class="text-center mt-3 text-zinc-700 dark:text-zinc-300 lg:text-lg lg:text-left"
-        >
-          Check out more of my smaller projects that are available on my <a
-            href="https://github.com/infiplaya"
-            class="dark:text-orange-400 text-orange-600 font-medium hover:underline underline-offset-4"
-            >Github</a
+        <section>
+          <h2 class="text-3xl font-semibold text-center lg:text-left">
+            Other projects
+          </h2>
+          <p
+            class="text-center mt-3 text-zinc-800 dark:text-zinc-100 text-lg lg:text-left"
           >
-        </p>
-      </section>
+            Check out more of my smaller projects that are available on my <a
+              href="https://github.com/infiplaya"
+              class="dark:text-orange-400 text-orange-600 font-medium hover:underline underline-offset-4"
+              >Github</a
+            >
+          </p>
+        </section>
+      </div>
+      <ContactCTA />
     </main>
-    <ContactCTA />
   </div>
 </BaseLayout>

@@ -27,89 +27,84 @@ const { Content } = await entry.render();
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>
-  <div
-    class="max-w-4xl mx-auto px-8 md:px-12 lg:px-20 py-4 md:py-8 lg:py-12"
-  >
-    <div>
-      <header>
-        <div>
-          <a class="hover:underline underline-offset-4 mb-4" href="/work/"
-            >Work</a
-          >
-          <Hero title={entry.data.title}>
-            <div>
-              <div class="flex justify-center lg:justify-start gap-5 mt-3">
-                {
-                  entry.data.tags.map((t) => (
-                    <div class="lg:px-6 px-4 py-2 mt-4 rounded-lg bg-indigo-500 text-zinc-50">
-                      {t}
-                    </div>
-                  ))
-                }
-              </div>
-              <p
-                class="mt-5 lg:text-lg font-semibold text-zinc-700 dark:text-zinc-200"
-              >
-                {entry.data.description}
-              </p>
-
-              <div>
-                {
-                  entry.data.link && (
-                    <a href={entry.data.link}>
-                      <div class="flex items-center gap-2 mt-5">
-                        <p class="dark:text-orange-300 font-semibold text-orange-600">
-                          Live version
-                        </p>
-                        <Icon
-                          name="mdi:link-box-variant"
-                          class="w-6 h-6 dark:text-orange-300 text-orange-600"
-                        />
-                      </div>
-                    </a>
-                  )
-                }
-
-                {
-                  entry.data.github && (
-                    <a href={entry.data.github}>
-                      <div class="flex items-center gap-2 mt-5">
-                        <p class="text-orange-600 font-semibold dark:text-orange-300">
-                          Github
-                        </p>
-                        <Icon
-                          name="mdi:github"
-                          class="w-6 h-6 text-orange-600 dark:text-orange-300"
-                        />
-                      </div>
-                    </a>
-                  )
-                }
-              </div>
+  <div class="max-w-3xl mx-auto px-8 mt-10">
+    <header>
+      <div>
+        <a class="hover:underline underline-offset-4 mb-4" href="/work/">Work</a
+        >
+        <Hero title={entry.data.title}>
+          <div>
+            <div class="flex justify-center lg:justify-start gap-5 mt-3">
+              {
+                entry.data.tags.map((t) => (
+                  <div class="lg:px-6 px-4 py-2 text-sm font-semibold mt-4 rounded-full bg-indigo-500 text-zinc-50">
+                    {t}
+                  </div>
+                ))
+              }
             </div>
-          </Hero>
-        </div>
-      </header>
-      <main class="mt-10">
-        <div>
-          {
-            entry.data.img && (
-              <img
-                src={entry.data.img}
-                alt={entry.data.img_alt || ""}
-                class="rounded-lg w-full shadow-lg dark:shadow-zinc-700"
-                width="1472"
-                height="871"
-                loading="lazy"
-              />
-            )
-          }
-          <article class="indent-4 mt-10 prose prose-zinc dark:prose-invert">
-            <Content />
-          </article>
-        </div>
-      </main>
-    </div>
-    <ContactCTA />
+            <p
+              class="mt-5 lg:text-lg font-semibold text-zinc-700 dark:text-zinc-200"
+            >
+              {entry.data.description}
+            </p>
+
+            <div>
+              {
+                entry.data.link && (
+                  <a href={entry.data.link}>
+                    <div class="flex items-center gap-2 mt-5">
+                      <p class="dark:text-orange-300 font-semibold text-orange-600">
+                        Live version
+                      </p>
+                      <Icon
+                        name="mdi:link-box-variant"
+                        class="w-6 h-6 dark:text-orange-300 text-orange-600"
+                      />
+                    </div>
+                  </a>
+                )
+              }
+
+              {
+                entry.data.github && (
+                  <a href={entry.data.github}>
+                    <div class="flex items-center gap-2 mt-5">
+                      <p class="text-orange-600 font-semibold dark:text-orange-300">
+                        Github
+                      </p>
+                      <Icon
+                        name="mdi:github"
+                        class="w-6 h-6 text-orange-600 dark:text-orange-300"
+                      />
+                    </div>
+                  </a>
+                )
+              }
+            </div>
+          </div>
+        </Hero>
+      </div>
+    </header>
+    <main class="mt-10">
+      <div>
+        {
+          entry.data.img && (
+            <img
+              src={entry.data.img}
+              alt={entry.data.img_alt || ""}
+              class="rounded-lg w-full shadow-lg dark:shadow-zinc-700"
+              width="1472"
+              height="871"
+              loading="lazy"
+            />
+          )
+        }
+        <article class="mt-20 prose prose-zinc dark:prose-invert">
+          <Content />
+        </article>
+      </div>
+    </main>
   </div>
+  <ContactCTA />
 </BaseLayout>

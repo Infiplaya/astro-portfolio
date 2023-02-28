@@ -10,6 +10,8 @@ import Footer from "../components/Footer.astro";
 // Import fonts
 import "@fontsource/montserrat/400.css";
 import "@fontsource/montserrat/variable.css";
+import "@fontsource/open-sans/400.css";
+import "@fontsource/open-sans/variable.css";
 
 interface Props {
   title?: string | undefined;
@@ -23,11 +25,11 @@ const { title, description } = Astro.props;
   <head>
     <MainHead title={title} description={description} />
   </head>
-  <body class="bg-zinc-50 dark:bg-zinc-900 text-zinc-900 dark:text-zinc-50">
+  <body>
     <div>
       <div
         id="cursor"
-        class="rounded-full w-24 h-24 fixed pointer-events-none bg-gradient-to-tr from-orange-500 to-lime-500 blur-2xl opacity-50 z-[10000]"
+        class="rounded-full w-24 h-24 fixed pointer-events-none bg-orange-400/30 blur-2xl z-[10000]"
       >
       </div>
       <Nav />
