@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+import { Image } from "@astrojs/image/components";
+
 import ContactCTA from "../components/ContactCTA.astro";
 import Hero from "../components/Hero.astro";
 import { Icon } from "astro-icon";
@@ -14,11 +16,12 @@ import { Icon } from "astro-icon";
     />
     <div class="md:flex flex-row-reverse block gap-5">
       <div class="flex-1">
-        <img
+        <Image
           src="/assets/avatar.webp"
           class="rounded-lg shadow-lg shadow-zinc-400 dark:shadow-zinc-700 mt-10"
-          loading="lazy"
-          decoding="async"
+          width={500}
+          height={500}
+          alt="Paweł Avatar"
         />
         <div class="mt-10 p-3">
           <h3 class="font-semibold text-xl mb-3">Socials</h3>

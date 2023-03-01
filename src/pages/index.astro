@@ -4,9 +4,10 @@ import { getCollection } from "astro:content";
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+import { Image } from '@astrojs/image/components';
+
 // Component Imports
 import Grid from "../components/Grid.astro";
-import Hero from "../components/Hero.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
 
 // Page section components
@@ -53,17 +54,21 @@ const projects = (await getCollection("work"))
           </p>
         </div>
 
-        <img
+        <Image
           alt="Paweł Sobaniec profile picture"
           class="rounded-full lg:hidden w-36 h-36 shadow-md shadow-zinc-200 dark:shadow-zinc-700"
           src="/assets/profile.webp"
+          width={144}
+          height={144}
         />
 
         <div class="flex-1">
-          <img
+          <Image
             alt="Paweł Sobaniec profile picture"
             class="rounded-xl flex-1 hidden lg:block w-full h-full border border-zinc-200 dark:border-zinc-800 shadow-lg dark:shadow-zinc-700 bg-zinc-100 dark:bg-zinc-900"
             src="/assets/profile.webp"
+            width={800}
+            height={800}
           />
         </div>
       </header>

@@ -1,6 +1,8 @@
 ---
 import type { CollectionEntry } from "astro:content";
 
+import { Image } from "@astrojs/image/components";
+
 interface Props {
   project: CollectionEntry<"work">;
 }
@@ -13,13 +15,11 @@ const { data, slug } = Astro.props.project;
     class="font-semibold tracking-tighter text-zinc-900 absolute top-5 left-5 bg-orange-400 py-1 px-3 rounded-lg"
     >{data.title}</span
   >
-  <img
+  <Image
     src={data.img}
     alt={data.img_alt || ""}
-    loading="lazy"
-    decoding="async"
     class="w-full object-cover shadow-lg dark:shadow-zinc-700 rounded-lg hover:scale-110 transition-transform"
-    width="1472"
-    height="871"
+    width={728}
+    height={420}
   />
 </a>

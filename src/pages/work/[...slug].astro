@@ -1,6 +1,8 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
 
+import { Image } from "@astrojs/image/components";
+
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 import ContactCTA from "../../components/ContactCTA.astro";
@@ -90,13 +92,12 @@ const { Content } = await entry.render();
       <div>
         {
           entry.data.img && (
-            <img
+            <Image
               src={entry.data.img}
               alt={entry.data.img_alt || ""}
               class="rounded-lg w-full shadow-lg dark:shadow-zinc-700"
-              width="1472"
-              height="871"
-              loading="lazy"
+              width={1472}
+              height={871}
             />
           )
         }
