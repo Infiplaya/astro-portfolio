@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+import resume from "../../public/assets/resume.pdf";
+
 import { Image } from "@astrojs/image/components";
 
 import ContactCTA from "../components/ContactCTA.astro";
@@ -25,7 +27,7 @@ import { Icon } from "astro-icon";
         />
         <div class="mt-10 p-3">
           <h3 class="font-semibold text-xl mb-3">Socials</h3>
-          <ul class="flex gap-1">
+          <ul class="flex gap-1 items-center">
             <li>
               <a href="https://github.com/infiplaya"
                 ><Icon
@@ -48,6 +50,14 @@ import { Icon } from "astro-icon";
                   class="dark:text-zinc-100 transition hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-2xl p-1 text-zinc-800 hover:text-orange-500 dark:hover:text-orange-500 w-9 h-9 subpixel-antialiased"
                   name="mdi:twitch"
                 /></a
+              >
+            </li>
+            <li class="ml-5">
+              <a
+                href={resume}
+                download
+                class="rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-800 px-6 py-3"
+                >Download Resume</a
               >
             </li>
           </ul>
