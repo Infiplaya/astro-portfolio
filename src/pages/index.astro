@@ -4,7 +4,7 @@ import { getCollection } from "astro:content";
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import { Image } from '@astrojs/image/components';
+import { Image } from "@astrojs/image/components";
 
 // Component Imports
 import Grid from "../components/Grid.astro";
@@ -21,7 +21,7 @@ const projects = (await getCollection("work"))
 ---
 
 <BaseLayout>
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="mt-10 md:mt-20 p-3 hide-ui">
       <header
         class="flex flex-col-reverse lg:flex-row justify-center items-center gap-5 lg:gap-10 lg:items-center lg:w-full"
@@ -39,8 +39,9 @@ const projects = (await getCollection("work"))
             >
           </h1>
           <p class="mt-5 text-lg">
-            I am a passionate web developer who is eager to build awesome user interfaces. I'm constantly seeking out opportunities to grow and
-            improve my craft. I love Typescript, React, Nextjs and Astro. 
+            I am a passionate web developer who is eager to build awesome user
+            interfaces. I'm constantly seeking out opportunities to grow and
+            improve my craft. I love Typescript, React, Nextjs and Astro.
             <a
               href="/about"
               class="font-bold text-orange-600 dark:text-orange-400 dark:hover:text-orange-300 hover:text-orange-500"
@@ -127,4 +128,3 @@ const projects = (await getCollection("work"))
   const hiddenElements = document.querySelectorAll(".hide-ui");
   hiddenElements.forEach((element) => observer.observe(element));
 </script>
-

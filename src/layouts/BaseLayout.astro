@@ -27,11 +27,6 @@ const { title, description } = Astro.props;
   </head>
   <body class="transition-colors">
     <div>
-      <div
-        id="cursor"
-        class="rounded-full w-24 h-24 fixed pointer-events-none bg-orange-400/30 blur-2xl z-[10000]"
-      >
-      </div>
       <Nav />
       <slot />
       <Footer />
@@ -42,13 +37,6 @@ const { title, description } = Astro.props;
       addEventListener("load", () =>
         document.documentElement.classList.add("loaded")
       );
-
-      const cursor = document.getElementById("cursor");
-
-      document.addEventListener("mousemove", function handleClick(event) {
-        cursor!.style.top = event.clientY - 40 + "px";
-        cursor!.style.left = event.clientX - 40 + "px";
-      });
     </script>
   </body>
 </html>
