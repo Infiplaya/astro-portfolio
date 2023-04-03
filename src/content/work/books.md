@@ -1,5 +1,5 @@
 ---
-title: Personal Blog
+title: Books-Svelte
 publishDate: 2019-10-02 00:00:00
 img: /assets/books.webp
 img_alt: Books application built with Svelte.
