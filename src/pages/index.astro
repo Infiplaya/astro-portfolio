@@ -13,8 +13,8 @@ const projects = (await getCollection("projects")).sort(
 ---
 
 <BaseLayout title={"Portfolio"}>
-  <main class="max-w-5xl px-5 lg:px-20">
-    <div class="mt-12">
+  <main>
+    <div class="mt-12 max-w-5xl px-5 lg:px-20">
       <img
         alt="avatar"
         src="/assets/avatar.png"
@@ -48,17 +48,21 @@ const projects = (await getCollection("projects")).sort(
       </Hero>
     </div>
     <section class="mt-12">
-      <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-        About me
-      </h2>
-      <p class="mt-6 max-w-2xl text-gray-700 dark:text-gray-300">
-        I began my programming journey as a child tinkering with HTML and CSS.
-        Over the past year, I've focused on mastering the fundamentals of
-        JavaScript before delving deeper into the React ecosystem.
-      </p>
-      <SkillsMarquee />
+      <div class="px-5 lg:px-20">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+          About me
+        </h2>
+        <p class="mt-6 max-w-2xl text-gray-700 dark:text-gray-300">
+          I began my programming journey as a child tinkering with HTML and CSS.
+          Over the past year, I've focused on mastering the fundamentals of
+          JavaScript before delving deeper into the React ecosystem.
+        </p>
+      </div>
+      <div class="lg:mt-12">
+        <SkillsMarquee />
+      </div>
     </section>
-    <section class="mt-12">
+    <section class="mt-12 px-5 lg:mt-16 lg:px-20">
       <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
         Projects
       </h2>

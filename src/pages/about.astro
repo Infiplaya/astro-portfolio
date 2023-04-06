@@ -9,54 +9,17 @@ import { Icon } from "astro-icon";
 ---
 
 <BaseLayout title="About | Paweł Sobaniec" description="About Paweł Sobaniec">
-  <div class="hide-ui mx-auto mt-10 max-w-6xl px-8">
-    <Hero
-      title="Great to see you!"
-      tagline="Thanks for stopping by. It means a lot for me. Read below to learn more about myself and my background."
+  <main class="mx-auto px-5 mt-12">
+    <img
+      alt="avatar"
+      src="/assets/avatar.png"
+      class="mb-6 h-48 w-48 rotate-2 rounded-lg object-cover"
     />
-    <div class="block flex-row-reverse gap-5 md:flex">
-      <div class="flex-1">
-        <Image
-          src="/assets/avatar.webp"
-          class="rounded-lg shadow-lg shadow-zinc-400 dark:shadow-zinc-700 mt-10"
-          width={500}
-          height={500}
-          alt="Paweł Avatar"
-        />
-        <div class="mt-10 p-3">
-          <h3 class="mb-3 text-xl font-semibold">Socials</h3>
-          <ul class="flex items-center gap-1">
-            <li>
-              <a href="https://github.com/infiplaya"
-                ><Icon
-                  class="dark:text-zinc-100 transition hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-2xl p-1 text-zinc-800 hover:text-orange-500 dark:hover:text-orange-500 w-9 h-9 subpixel-antialiased"
-                  name="mdi:github"
-                /></a
-              >
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/psobaniec09/"
-                ><Icon
-                  class="dark:text-zinc-100 transition hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-2xl p-1 text-zinc-800 hover:text-orange-500 dark:hover:text-orange-500 w-9 h-9 subpixel-antialiased"
-                  name="mdi:linkedin"
-                /></a
-              >
-            </li>
-            <li>
-              <a href="https://twitch.com/noctate12"
-                ><Icon
-                  class="dark:text-zinc-100 transition hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-2xl p-1 text-zinc-800 hover:text-orange-500 dark:hover:text-orange-500 w-9 h-9 subpixel-antialiased"
-                  name="mdi:twitch"
-                /></a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="flex-1">
-        <section class="mt-20">
-          <h2 class="mt-10 text-3xl font-semibold">Background</h2>
+    <Hero title="I'm Paweł. Great to see you!" />
+    <div>
+      <div>
+        <section>
+          <h2 class="mt-10 text-3xl font-semibold">About me</h2>
           <article class="prose prose-zinc mt-5 dark:prose-invert">
             <p>
               Hey there! I'm a programmer who's been learning the ropes for a
@@ -111,24 +74,5 @@ import { Icon } from "astro-icon";
         </section>
       </div>
     </div>
-  </div>
-
-  <ContactCTA />
+  </main>
 </BaseLayout>
-
-<script defer>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      console.log(entry);
-
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      } else {
-        entry.target.classList.remove("show");
-      }
-    });
-  });
-
-  const hiddenElements = document.querySelectorAll(".hide-ui");
-  hiddenElements.forEach((element) => observer.observe(element));
-</script>
