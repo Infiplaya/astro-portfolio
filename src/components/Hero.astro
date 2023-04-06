@@ -9,8 +9,6 @@ const { title } = Astro.props;
 ---
 
 <header>
-  <div class="text-center lg:text-left">
-    <h1 class="text-4xl lg:text-5xl font-poppins">{title}</h1>
-  </div>
+  <h1>{title}</h1>
   <slot />
 </header>

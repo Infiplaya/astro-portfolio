@@ -2,15 +2,9 @@
 // Learn about using Astro layouts:
 // https://docs.astro.build/en/core-concepts/layouts/
 
-// Component Imports
 import MainHead from "../components/MainHead.astro";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-
-// Import fonts
-import "@fontsource/open-sans/400.css";
-import "@fontsource/open-sans/variable.css";
-import "@fontsource/poppins/400.css";
 
 interface Props {
   title?: string | undefined;
@@ -24,15 +18,14 @@ const { title, description } = Astro.props;
   <head>
     <MainHead title={title} description={description} />
   </head>
-  <body class="transition-colors">
-    <div>
+  <body>
+    <div class="bg-gray-100 flex flex-col min-h-screen dark:bg-gray-900 w-full">
       <Nav />
       <slot />
       <Footer />
     </div>
 
     <script>
-      // Add “loaded” class once the document has completely loaded.
       addEventListener("load", () =>
         document.documentElement.classList.add("loaded")
       );

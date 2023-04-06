@@ -5,13 +5,6 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   darkMode: "class",
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ["OpenSansVariable", "OpenSans", ...defaultTheme.fontFamily.sans],
-        poppins: ["Poppins", ...defaultTheme.fontFamily.sans],
-      },
-    },
-  },
+  theme: {},
   plugins: [require("@tailwindcss/typography")],
 };
