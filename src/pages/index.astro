@@ -13,7 +13,7 @@ const projects = (await getCollection("projects")).sort(
 ---
 
 <BaseLayout title={"Portfolio"}>
-  <main class="px-5">
+  <main class="max-w-5xl px-5 lg:px-20">
     <div class="mt-12">
       <img
         alt="avatar"
@@ -21,7 +21,7 @@ const projects = (await getCollection("projects")).sort(
         class="mb-6 h-24 w-24 rounded-full object-cover"
       />
       <Hero title="Front-end Engineer">
-        <p class="mt-6 text-gray-700 dark:text-gray-300">
+        <p class="mt-6 max-w-2xl text-gray-700 dark:text-gray-300">
           I’m Paweł, a web developer based in Poland. With a passion for using
           technology to improve people's lives, I'm dedicated to creating
           solutions that make a difference.
@@ -51,7 +51,7 @@ const projects = (await getCollection("projects")).sort(
       <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
         About me
       </h2>
-      <p class="mt-6 text-gray-700 dark:text-gray-300">
+      <p class="mt-6 max-w-2xl text-gray-700 dark:text-gray-300">
         I began my programming journey as a child tinkering with HTML and CSS.
         Over the past year, I've focused on mastering the fundamentals of
         JavaScript before delving deeper into the React ecosystem.
@@ -62,7 +62,7 @@ const projects = (await getCollection("projects")).sort(
       <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
         Projects
       </h2>
-      <div class="mt-3">
+      <div class="mt-3 grid-cols-2 gap-10 lg:grid">
         {projects.map((project) => <ProjectPreview project={project} />)}
       </div>
     </section>
