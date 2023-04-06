@@ -1,136 +1,21 @@
 ---
-import { Icon } from "astro-icon";
+import { MobileMenu } from "./MobileMenu";
 import ThemeToggle from "./ThemeToggle.astro";
-
-/** Main menu items */
-const textLinks: { label: string; href: string }[] = [
-  { label: "Home", href: "/" },
-  { label: "Work", href: "/work/" },
-  { label: "About", href: "/about/" },
-];
 ---
 
-<nav class="sticky top-0 w-full p-1 z-20 backdrop-blur-md">
-  <div class="flex w-full items-center sm:px-10 p-5 justify-between lg:px-20">
-    <a
-      href="/"
-      class="text-lg sm:text-xl font-semibold tracking-tighter flex items-center gap-3"
-    >
-      Paweł Sobaniec
-    </a>
-    <menu-button
-      class="flex items-center md:hidden rounded-lg p-1 dark:hover:bg-zinc-700"
-    >
-      <template>
-        <button class="menu-button" aria-expanded="false">
-          <span class="sr-only">Menu</span>
-          <Icon class="w-7 h-7 dark:text-slate-100" name="uil:bars" />
-        </button>
-      </template>
-    </menu-button>
-
-    <ul
-      class="hidden md:mx-auto relative font-medium text-sm w-64 md:flex justify-center gap-2 dark:bg-zinc-800 bg-zinc-200 px-8 rounded-lg"
-    >
-      {
-        textLinks.map(({ label, href }) => (
-          <li>
-            <a
-              aria-current={Astro.url.pathname === href}
-              class={
-                Astro.url.pathname === href
-                  ? "block transition relative text-orange-600 dark:text-orange-400 py-3 px-4 hover:text-orange-500 dark:hover:text-orange-400 rounded-lg"
-                  : "block transition relative text-zinc-800 dark:text-zinc-100 py-3 px-4 hover:text-orange-500 dark:hover:text-orange-400 rounded-lg"
-              }
-              href={href}
-            >
-              {label}
-              {Astro.url.pathname === href ||
-              (href !== "/" && Astro.url.pathname.startsWith(href)) ? (
-                <span class="absolute inset-x-1 -bottom-px h-[3px] bg-gradient-to-r from-orange-500/0 via-orange-500/40 to-orange-500/0 dark:from-orange-400/0 dark:via-orange-400/40 dark:to-orange-400/0" />
-              ) : null}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-
-    <div class="hidden md:flex gap-3">
-      <a href="https://github.com/infiplaya">
-        <span class="sr-only">Github</span>
-        <Icon
-          class="dark:text-zinc-100 transition hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-2xl p-1 text-zinc-800 hover:text-orange-500 dark:hover:text-orange-500 w-9 h-9 subpixel-antialiased"
-          name="mdi:github"
-        />
-      </a>
-      <div>
-        <ThemeToggle />
-      </div>
-    </div>
-  </div>
+<nav class="flex w-full items-baseline justify-between p-5 lg:px-20">
+  <a href="/" class="font-semibold">Paweł Sobaniec</a>
   <div
-    id="menu-content"
-    class="bg-zinc-100 dark:bg-zinc-800 md:hidden rounded-lg z-10"
+    class="hidden gap-3 rounded-2xl border border-gray-300 bg-gray-200 px-6 py-3 text-sm text-gray-600 hover:border-gray-400 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300 lg:flex"
   >
-    <ul class="flex flex-col gap-3 pt-5 pb-10 pl-5">
-      {
-        textLinks.map(({ label, href }) => (
-          <li>
-            <a
-              aria-current={Astro.url.pathname === href}
-              class={
-                Astro.url.pathname === href
-                  ? "block transition relative text-orange-600 dark:text-orange-400  hover:text-orange-500 dark:hover:text-orange-400 rounded-lg"
-                  : "block transition relative text-zinc-800 dark:text-zinc-100  hover:text-orange-500 dark:hover:text-orange-400 rounded-lg"
-              }
-              href={href}
-            >
-              {label}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-    <div
-      class="px-5 py-5 flex justify-between border-t border-zinc-200 dark:border-zinc-700"
+    <a href="/about" class="hover:text-sky-500 dark:hover:text-sky-400">About</a
     >
-      <div class="flex gap-3">
-        <a href="https://github.com/infiplaya">
-          <span class="sr-only">Github</span>
-          <Icon
-            class="dark:text-zinc-100 hover:text-orange-500 dark:hover:text-orange-500 rounded-lg p-1 text-zinc-800 w-9 h-9 subpixel-antialiased"
-            name="mdi:github"
-          />
-        </a>
-      </div>
-
-      <ThemeToggle />
-    </div>
+    <a href="/projects" class="hover:text-sky-500 dark:hover:text-sky-400"
+      >Projects</a
+    >
+  </div>
+  <div class="flex items-center gap-5">
+    <MobileMenu client:visible />
+    <ThemeToggle />
   </div>
 </nav>
-
-<script>
-  class MenuButton extends HTMLElement {
-    constructor() {
-      super();
-
-      // Inject menu toggle button when JS runs.
-      this.appendChild(this.querySelector("template")!.content.cloneNode(true));
-      const btn = this.querySelector("button")!;
-
-      // Hide menu (shown by default to support no-JS browsers).
-      const menu = document.getElementById("menu-content")!;
-      menu.hidden = true;
-
-      /** Set whether the menu is currently expanded or collapsed. */
-      const setExpanded = (expand: boolean) => {
-        btn.setAttribute("aria-expanded", expand ? "true" : "false");
-        menu.hidden = !expand;
-      };
-
-      // Toggle menu visibility when the menu button is clicked.
-      btn.addEventListener("click", () => setExpanded(menu.hidden));
-    }
-  }
-  customElements.define("menu-button", MenuButton);
-</script>

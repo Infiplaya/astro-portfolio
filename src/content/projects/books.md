@@ -1,5 +1,5 @@
 ---
-title: Books-Svelte
+title: Bookz
 publishDate: 2019-10-02 00:00:00
 img: /assets/books.webp
 img_alt: Books application built with Svelte.

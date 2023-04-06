@@ -3,23 +3,25 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer
-  class="px-10 py-12 lg:py-16 lg:px-20 dark:text-zinc-400 text-zinc-700 border-t-2 border-zinc-100 dark:border-zinc-800 md:flex md:items-center md:justify-between mt-10"
+  class="mt-12 w-full lg:flex justify-between items-baseline lg:px-20 border-t-2 border-gray-200 py-10 dark:border-gray-800"
 >
-  <div class="flex flex-col items-center md:flex-row">
-    <p>&copy; {currentYear} Paweł Sobaniec</p>
-  </div>
-  <p class="flex mt-5 justify-center gap-3">
-    <a
-      href="https://cryptosito.vercel.app"
-      class="hover:underline underline-offset-4"
-      target="_blank">Cryptosito</a
+  <div
+    class="space-x-3 text-center text-sm font-semibold text-gray-800 dark:text-gray-300"
+  >
+    <a href="/about" class="hover:text-sky-500 dark:hover:text-sky-400">About</a
+    >
+    <a href="/projects" class="hover:text-sky-500 dark:hover:text-sky-400"
+      >Projects</a
     >
     <a
       href="https://github.com/infiplaya"
-      class="hover:underline underline-offset-4"
       target="_blank"
+      class="hover:text-sky-500 dark:hover:text-sky-400">Github</a
     >
-      GitHub</a
-    >
+  </div>
+  <p
+    class="mt-6 text-center text-sm font-semibold text-gray-700 dark:text-gray-400"
+  >
+    &copy; {currentYear} Paweł Sobaniec
   </p>
 </footer>

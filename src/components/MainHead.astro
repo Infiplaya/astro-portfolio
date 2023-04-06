@@ -6,10 +6,8 @@ interface Props {
   description?: string | undefined;
 }
 
-const {
-  title = "Paweł Sobaniec portfolio",
-  description = "The portfolio of Paweł Sobaniec",
-} = Astro.props;
+const { title = "Portfolio", description = "The portfolio of Paweł Sobaniec" } =
+  Astro.props;
 ---
 
 <meta charset="UTF-8" />
@@ -18,7 +16,7 @@ const {
 <meta name="generator" content={Astro.generator} />
 <title>{title}</title>
 
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 
 <script is:inline>
