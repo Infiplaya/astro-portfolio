@@ -3,68 +3,109 @@ import { getCollection } from "astro:content";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import ContactCTA from "../components/ContactCTA.astro";
-
 import Hero from "../components/Hero.astro";
-import Grid from "../components/Grid.astro";
 import ProjectPreview from "../components/ProjectPreview.astro";
 
 const projects = (await getCollection("projects")).sort(
   (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
 );
+
+export const smallerProjects = [
+  {
+    name: "Grab A Food",
+    description:
+      "Culinary website that will help you find right recipe for you",
+    link: "https://github.com/Infiplaya/grabafood",
+  },
+  {
+    name: "E-commerce website",
+    description: "Built with graphql and nextjs simple e-commerce website",
+    link: "https://github.com/Infiplaya/recrutation-task-graphql",
+  },
+  {
+    name: "Lost Knight",
+    description: "Demo of the platformer game created with LUA framework LÖVE",
+    link: "https://github.com/Infiplaya/lostknight",
+  },
+  {
+    name: "Pokedex",
+    description: "Playing with stores using NextJS and pokemons",
+    link: "https://github.com/Infiplaya/pokemons-next13-oldpages",
+  },
+  {
+    name: "Quizgame",
+    description: "Trivia quiz built in clean React",
+    link: "https://github.com/Infiplaya/quizgame",
+  },
+  {
+    name: "TVShows",
+    description: "TV Shows recommendation web app created with Flask",
+    link: "https://github.com/Infiplaya/recommendtvshow",
+  },
+  {
+    name: "Todo-gpt",
+    description: "Todo app but with AI twist",
+    link: "https://github.com/Infiplaya/todo-gpt",
+  },
+  {
+    name: "Wordle clon",
+    description: "Wordle built with vanilla javascript",
+    link: "https://github.com/Infiplaya/wordle",
+  },
+  {
+    name: "Tic tac toe",
+    description: "Tic tac toe game for learning react",
+    link: "https://github.com/Infiplaya/tic-tac-toe",
+  },
+];
 ---
 
 <BaseLayout
   title="My Projects | Paweł Sobaniec"
   description="Learn about Paweł Sobaniec's most recent projects"
 >
-  <div class="mx-auto mt-10 max-w-6xl px-8">
-    <main class="mt-10 lg:mt-20">
-      <div class="space-y-20">
-        <Hero title="My Work" />
-        <Grid>
-          {
-            projects.map((project) => (
-              <li>
-                <ProjectPreview project={project} />
-              </li>
-            ))
-          }
-        </Grid>
+  <main class="mt-12">
+    <div class="px-4 lg:px-20">
+      <Hero title="Projects I've built">
+        <p class="mt-6 max-w-2xl text-gray-700 dark:text-gray-300">
+          I’ve built tons of small apps while learning programming but these are
+          the ones that I’m most proud of. I surely learned a lot about frontend
+          but also something about backend and databases while working on them.
+        </p>
+      </Hero>
+    </div>
 
-        <section>
-          <h2 class="text-center text-3xl font-semibold lg:text-left">
-            Other projects
-          </h2>
-          <p
-            class="mt-3 text-center text-lg text-zinc-800 dark:text-zinc-100 lg:text-left"
-          >
-            Check out more of my smaller projects that are available on my <a
-              href="https://github.com/infiplaya"
-              class="font-medium text-orange-600 underline-offset-4 hover:underline dark:text-orange-400"
-              >Github</a
-            >
-          </p>
-        </section>
-      </div>
-      <ContactCTA />
-    </main>
-  </div>
+    <div
+      class="mt-6 grid-cols-2 gap-10 space-y-5 lg:grid lg:space-y-0 lg:px-12"
+    >
+      {projects.map((project) => <ProjectPreview project={project} />)}
+    </div>
+
+    <section class="mt-12 px-5 lg:px-20">
+      <h2 class="text-xl">Smaller apps</h2>
+      <p class="mt-3 text-gray-700 dark:text-gray-300 text-sm">
+        Projects that I did for learning purposes, mainly with Javascript or
+        Python
+      </p>
+      <ul class="mt-6 space-y-6">
+        {
+          smallerProjects.reverse().map((sp) => (
+            <div class="w-auto space-y-2">
+              <h3 class="font-semibold">{sp.name}</h3>
+              <p class="text-sm text-gray-700 dark:text-gray-300">
+                {sp.description}
+              </p>
+              <a
+                href={sp.link}
+                target="_blank"
+                class="text-sm hover:text-sky-500"
+              >
+                Github
+              </a>
+            </div>
+          ))
+        }
+      </ul>
+    </section>
+  </main>
 </BaseLayout>
-
-<script defer>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      console.log(entry);
-
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      } else {
-        entry.target.classList.remove("show");
-      }
-    });
-  });
-
-  const hiddenElements = document.querySelectorAll(".hide-ui");
-  hiddenElements.forEach((element) => observer.observe(element));
-</script>
