@@ -10,16 +10,17 @@ interface Props {
 const { data, slug } = Astro.props.project;
 ---
 
-<a href={`/work/${slug}`} class="relative mt-10 group">
-  <span
-    class="font-semibold tracking-tighter text-zinc-900 z-50 absolute group-hover:scale-110 top-5 left-5 bg-orange-400 transition-transform py-1 px-3 rounded-lg"
-    >{data.title}</span
+<a href={`/projects/${slug}`}>
+  <div
+    class="mt-3 rounded-lg py-5 transition hover:bg-gray-200 dark:hover:bg-gray-800"
   >
-  <Image
-    src={data.img}
-    alt={data.img_alt || ""}
-    class="w-full object-cover shadow-lg dark:shadow-zinc-500/20 rounded-lg group-hover:scale-110 transition-transform"
-    width={728}
-    height={420}
-  />
+    <h3 class="mx-3 text-lg font-semibold">{data.title}</h3>
+    <p class="mx-3 mb-3 text-sm text-gray-800 dark:text-gray-300">
+      {data.description}
+    </p>
+    <a
+      class="mx-3 text-sm text-sky-500 font-semibold dark:text-sky-400"
+      href={`/projects/${slug}`}>Learn more</a
+    >
+  </div>
 </a>

@@ -2,4 +2,25 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="">hi</footer>
+<footer
+  class="mt-12 w-full border-t-2 border-gray-200 py-10 dark:border-gray-800"
+>
+  <div
+    class="space-x-3 text-center text-sm font-semibold text-gray-800 dark:text-gray-300"
+  >
+    <a href="/" class="hover:text-sky-500 dark:hover:text-sky-400">About</a>
+    <a href="/projects" class="hover:text-sky-500 dark:hover:text-sky-400"
+      >Projects</a
+    >
+    <a
+      href="https://github.com/infiplaya"
+      target="_blank"
+      class="hover:text-sky-500 dark:hover:text-sky-400">Github</a
+    >
+  </div>
+  <p
+    class="mt-6 text-center text-sm font-semibold text-gray-700 dark:text-gray-400"
+  >
+    &copy; {currentYear} Paweł Sobaniec
+  </p>
+</footer>

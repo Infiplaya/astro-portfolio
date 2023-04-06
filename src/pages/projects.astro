@@ -4,9 +4,10 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 import ContactCTA from "../components/ContactCTA.astro";
-import Projects from "../components/Projects.astro";
+
 import Hero from "../components/Hero.astro";
 import Grid from "../components/Grid.astro";
+import ProjectPreview from "../components/ProjectPreview.astro";
 
 const projects = (await getCollection("projects")).sort(
   (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
@@ -17,30 +18,30 @@ const projects = (await getCollection("projects")).sort(
   title="My Projects | Paweł Sobaniec"
   description="Learn about Paweł Sobaniec's most recent projects"
 >
-  <div class="max-w-6xl mx-auto px-8 mt-10 hide-ui">
-    <main class="lg:mt-20 mt-10">
+  <div class="mx-auto mt-10 max-w-6xl px-8">
+    <main class="mt-10 lg:mt-20">
       <div class="space-y-20">
         <Hero title="My Work" />
         <Grid>
           {
             projects.map((project) => (
               <li>
-                <Projects project={project} />
+                <ProjectPreview project={project} />
               </li>
             ))
           }
         </Grid>
 
         <section>
-          <h2 class="text-3xl font-semibold text-center lg:text-left">
+          <h2 class="text-center text-3xl font-semibold lg:text-left">
             Other projects
           </h2>
           <p
-            class="text-center mt-3 text-zinc-800 dark:text-zinc-100 text-lg lg:text-left"
+            class="mt-3 text-center text-lg text-zinc-800 dark:text-zinc-100 lg:text-left"
           >
             Check out more of my smaller projects that are available on my <a
               href="https://github.com/infiplaya"
-              class="dark:text-orange-400 text-orange-600 font-medium hover:underline underline-offset-4"
+              class="font-medium text-orange-600 underline-offset-4 hover:underline dark:text-orange-400"
               >Github</a
             >
           </p>

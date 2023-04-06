@@ -1,0 +1,76 @@
+---
+import SkillButton from "./SkillButton.astro";
+const skills = [
+  {
+    icon: "logos:javascript",
+    skill: "Javascript",
+  },
+  {
+    icon: "logos:html-5",
+    skill: "HTML",
+  },
+  {
+    icon: "logos:css-3",
+    skill: "CSS",
+  },
+  {
+    icon: "logos:typescript-icon",
+    skill: "Typescript",
+  },
+  {
+    icon: "logos:react",
+    skill: "React",
+  },
+  {
+    icon: "logos:redux",
+    skill: "Redux",
+  },
+  {
+    icon: "logos:nextjs",
+    skill: "Next.js",
+  },
+];
+---
+
+<div class="relative flex overflow-x-hidden">
+  <div class="animate-marquee whitespace-nowrap py-6">
+    {
+      skills.slice(0, 4).map((item) => (
+        <span class="mx-4">
+          <SkillButton skill={item.skill} icon={item.icon} />
+        </span>
+      ))
+    }
+  </div>
+
+  <div class="absolute top-0 animate-marquee2 whitespace-nowrap py-6">
+    {
+      skills.slice(0, 4).map((item) => (
+        <span class="mx-4">
+          <SkillButton skill={item.skill} icon={item.icon} />
+        </span>
+      ))
+    }
+  </div>
+</div>
+<div class="relative flex overflow-x-hidden">
+  <div class="animate-marquee whitespace-nowrap">
+    {
+      skills.slice(4, 7).map((item) => (
+        <span class="mx-4">
+          <SkillButton skill={item.skill} icon={item.icon} />
+        </span>
+      ))
+    }
+  </div>
+
+  <div class="absolute top-0 animate-marquee2 whitespace-nowrap">
+    {
+      skills.slice(4, 7).map((item) => (
+        <span class="mx-4">
+          <SkillButton skill={item.skill} icon={item.icon} />
+        </span>
+      ))
+    }
+  </div>
+</div>

@@ -1,11 +1,13 @@
 ---
 import { Icon } from "astro-icon";
+import { MobileMenu } from "./MobileMenu";
 import ThemeToggle from "./ThemeToggle.astro";
 ---
 
-<nav class="w-full p-5 flex justify-end">
-  <div class="flex ">
-    <button>Menu</button>
+<nav class="flex w-full items-baseline justify-between p-5">
+  <a href="/" class="font-semibold">Paweł Sobaniec</a>
+  <div class="flex items-center gap-5">
+    <MobileMenu client:visible />
     <ThemeToggle />
   </div>
 </nav>

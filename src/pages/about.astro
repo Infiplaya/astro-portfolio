@@ -1,8 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import resume from "../../public/assets/resume.pdf";
-
 import { Image } from "@astrojs/image/components";
 
 import ContactCTA from "../components/ContactCTA.astro";
@@ -11,12 +9,12 @@ import { Icon } from "astro-icon";
 ---
 
 <BaseLayout title="About | Paweł Sobaniec" description="About Paweł Sobaniec">
-  <div class="max-w-6xl mx-auto px-8 mt-10 hide-ui">
+  <div class="hide-ui mx-auto mt-10 max-w-6xl px-8">
     <Hero
       title="Great to see you!"
       tagline="Thanks for stopping by. It means a lot for me. Read below to learn more about myself and my background."
     />
-    <div class="md:flex flex-row-reverse block gap-5">
+    <div class="block flex-row-reverse gap-5 md:flex">
       <div class="flex-1">
         <Image
           src="/assets/avatar.webp"
@@ -26,8 +24,8 @@ import { Icon } from "astro-icon";
           alt="Paweł Avatar"
         />
         <div class="mt-10 p-3">
-          <h3 class="font-semibold text-xl mb-3">Socials</h3>
-          <ul class="flex gap-1 items-center">
+          <h3 class="mb-3 text-xl font-semibold">Socials</h3>
+          <ul class="flex items-center gap-1">
             <li>
               <a href="https://github.com/infiplaya"
                 ><Icon
@@ -58,8 +56,8 @@ import { Icon } from "astro-icon";
 
       <div class="flex-1">
         <section class="mt-20">
-          <h2 class="font-semibold text-3xl mt-10">Background</h2>
-          <article class="mt-5 prose prose-zinc dark:prose-invert">
+          <h2 class="mt-10 text-3xl font-semibold">Background</h2>
+          <article class="prose prose-zinc mt-5 dark:prose-invert">
             <p>
               Hey there! I'm a programmer who's been learning the ropes for a
               little over half a year now. I actually have some experience with
@@ -95,9 +93,9 @@ import { Icon } from "astro-icon";
           </article>
         </section>
 
-        <section class="prose prose-zinc dark:prose-invert mt-10">
-          <h2 class="font-semibold text-3xl -mb-5">Tech I Use</h2>
-          <div class="mt-2 dark:text-zinc-300 text-zinc-700">
+        <section class="prose prose-zinc mt-10 dark:prose-invert">
+          <h2 class="-mb-5 text-3xl font-semibold">Tech I Use</h2>
+          <div class="mt-2 text-zinc-700 dark:text-zinc-300">
             <ul class="p-3">
               <li>HTML</li>
               <li>CSS</li>
