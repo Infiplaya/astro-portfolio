@@ -32,101 +32,41 @@ const skills = [
 ];
 ---
 
-<div class="relative flex overflow-x-hidden">
-  <div class="animate-marquee whitespace-nowrap py-6">
+<div class="mt-12 flex overflow-hidden py-10">
+  <ul class="flex shrink-0 animate-marquee gap-8">
     {
-      skills.slice(0, 4).map((item) => (
-        <span class="mx-4">
+      skills.map((item) => (
+        <li class="shrink-0">
           <SkillButton skill={item.skill} icon={item.icon} />
-        </span>
+        </li>
       ))
     }
+  </ul>
+  <ul class="flex shrink-0 animate-marquee gap-8 pl-8" aria-hidden="true">
     {
-      skills.slice(0, 4).map((item) => (
-        <span class="mx-4">
+      skills.map((item) => (
+        <li class="shrink-0">
           <SkillButton skill={item.skill} icon={item.icon} />
-        </span>
+        </li>
       ))
     }
+  </ul>
+  <ul class="flex shrink-0 animate-marquee gap-8 pl-8" aria-hidden="true">
     {
-      skills.slice(0, 4).map((item) => (
-        <span class="mx-4">
+      skills.map((item) => (
+        <li class="shrink-0">
           <SkillButton skill={item.skill} icon={item.icon} />
-        </span>
+        </li>
       ))
     }
-  </div>
-
-  <div class="absolute top-0 animate-marquee2 whitespace-nowrap py-6">
+  </ul>
+  <ul class="flex shrink-0 animate-marquee gap-8 pl-8" aria-hidden="true">
     {
-      skills.slice(0, 4).map((item) => (
-        <span class="mx-4">
+      skills.map((item) => (
+        <li class="shrink-0">
           <SkillButton skill={item.skill} icon={item.icon} />
-        </span>
+        </li>
       ))
     }
-    {
-      skills.slice(0, 4).map((item) => (
-        <span class="mx-4">
-          <SkillButton skill={item.skill} icon={item.icon} />
-        </span>
-      ))
-    }
-    {
-      skills.slice(0, 4).map((item) => (
-        <span class="mx-4">
-          <SkillButton skill={item.skill} icon={item.icon} />
-        </span>
-      ))
-    }
-  </div>
-</div>
-<div class="relative flex overflow-x-hidden">
-  <div class="animate-marquee whitespace-nowrap">
-    {
-      skills.slice(4, 7).map((item) => (
-        <span class="mx-4">
-          <SkillButton skill={item.skill} icon={item.icon} />
-        </span>
-      ))
-    }
-    {
-      skills.slice(0, 4).map((item) => (
-        <span class="mx-4">
-          <SkillButton skill={item.skill} icon={item.icon} />
-        </span>
-      ))
-    }
-    {
-      skills.slice(0, 4).map((item) => (
-        <span class="mx-4">
-          <SkillButton skill={item.skill} icon={item.icon} />
-        </span>
-      ))
-    }
-  </div>
-
-  <div class="absolute top-0 animate-marquee2 whitespace-nowrap">
-    {
-      skills.slice(4, 7).map((item) => (
-        <span class="mx-4">
-          <SkillButton skill={item.skill} icon={item.icon} />
-        </span>
-      ))
-    }
-    {
-      skills.slice(0, 4).map((item) => (
-        <span class="mx-4">
-          <SkillButton skill={item.skill} icon={item.icon} />
-        </span>
-      ))
-    }
-    {
-      skills.slice(0, 4).map((item) => (
-        <span class="mx-4">
-          <SkillButton skill={item.skill} icon={item.icon} />
-        </span>
-      ))
-    }
-  </div>
+  </ul>
 </div>
