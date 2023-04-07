@@ -19,51 +19,57 @@ export function MobileMenu() {
           />
         </button>
       </div>
-      <Dialog
-        as="div"
-        className="lg:hidden"
-        open={mobileMenu}
-        onClose={setMobileMenu}
-      >
-        <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 dark:bg-gray-900 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between">
-            <a href="/" className="-m-1.5 p-1.5 font-semibold">
-              <span className="sr-only">Home</span>
-              Paweł Sobaniec
-            </a>
-            <button
-              type="button"
-              className="-m-2.5 rounded-md border border-gray-300 bg-gray-200 p-1.5 text-gray-700 hover:border-gray-400 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200  dark:hover:border-gray-500"
-              onClick={() => setMobileMenu(false)}
-            >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon
-                className="h-6 w-6 text-gray-600 group-hover:text-gray-700 dark:text-gray-500 dark:group-hover:text-gray-400"
-                aria-hidden="true"
-              />
-            </button>
-          </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
-                <a
-                  href="/about"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-800 hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-gray-800"
+      <Transition appear show={mobileMenu} as={Fragment}>
+        <Dialog
+          as="div"
+          className="lg:hidden"
+          open={mobileMenu}
+          onClose={setMobileMenu}
+        >
+          <div className="fixed inset-0 z-10 bg-black bg-opacity-25 backdrop-blur-sm" />
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0 scale-95"
+            enterTo="opacity-100 scale-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100 scale-100"
+            leaveTo="opacity-0 scale-95"
+          >
+            <Dialog.Panel className="fixed inset-x-4 top-8 z-50 origin-top scale-100 rounded-3xl bg-white p-8 opacity-100 ring-1 ring-gray-900/5 dark:bg-gray-900 dark:ring-gray-800">
+              <div className="flex items-center justify-end">
+                <button
+                  type="button"
+                  className="-m-2.5 rounded-md border border-gray-300 bg-gray-200 p-1.5 text-gray-700 hover:border-gray-400 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200  dark:hover:border-gray-500"
+                  onClick={() => setMobileMenu(false)}
                 >
-                  About
-                </a>
-                <a
-                  href="/projects"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-8 text-gray-800 hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-gray-800"
-                >
-                  Projects
-                </a>
+                  <span className="sr-only">Close menu</span>
+                  <XMarkIcon
+                    className="h-6 w-6 text-gray-600 group-hover:text-gray-700 dark:text-gray-500 dark:group-hover:text-gray-400"
+                    aria-hidden="true"
+                  />
+                </button>
               </div>
-            </div>
-          </div>
-        </Dialog.Panel>
-      </Dialog>
+              <div className="mt-6 flow-root">
+                <div className="divide-y divide-gray-500/10">
+                  <a
+                    href="/about"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-800 dark:text-gray-200"
+                  >
+                    About
+                  </a>
+                  <a
+                    href="/projects"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-8 text-gray-800 dark:text-gray-200"
+                  >
+                    Projects
+                  </a>
+                </div>
+              </div>
+            </Dialog.Panel>
+          </Transition.Child>
+        </Dialog>
+      </Transition>
     </div>
   );
 }
