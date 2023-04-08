@@ -32,7 +32,7 @@ const skills = [
 ];
 ---
 
-<div class="mt-12 flex overflow-hidden py-10">
+<div class="mt-12 gap-8 flex overflow-x-hidden py-10">
   <ul class="flex shrink-0 animate-marquee gap-8">
     {
       skills.map((item) => (
@@ -42,7 +42,7 @@ const skills = [
       ))
     }
   </ul>
-  <ul class="flex shrink-0 animate-marqueeSlow gap-8 pl-8" aria-hidden="true">
+  <ul class="flex shrink-0 animate-marquee gap-8" aria-hidden="true">
     {
       skills.map((item) => (
         <li class="shrink-0">
@@ -51,7 +51,7 @@ const skills = [
       ))
     }
   </ul>
-  <ul class="flex shrink-0 animate-marqueeSlow gap-8 pl-8" aria-hidden="true">
+  <ul class="flex shrink-0 animate-marquee gap-8" aria-hidden="true">
     {
       skills.map((item) => (
         <li class="shrink-0">
@@ -60,7 +60,45 @@ const skills = [
       ))
     }
   </ul>
-  <ul class="flex shrink-0 animate-marqueeSlow gap-8 pl-8" aria-hidden="true">
+  <ul class="flex shrink-0 animate-marquee gap-8" aria-hidden="true">
+    {
+      skills.map((item) => (
+        <li class="shrink-0">
+          <SkillButton skill={item.skill} icon={item.icon} />
+        </li>
+      ))
+    }
+  </ul>
+</div>
+<div class="gap-8 flex overflow-x-hidden">
+  <ul class="flex shrink-0 animate-marquee2 gap-8">
+    {
+      skills.map((item) => (
+        <li class="shrink-0">
+          <SkillButton skill={item.skill} icon={item.icon} />
+        </li>
+      ))
+    }
+  </ul>
+  <ul class="flex shrink-0 animate-marquee2 gap-8" aria-hidden="true">
+    {
+      skills.map((item) => (
+        <li class="shrink-0">
+          <SkillButton skill={item.skill} icon={item.icon} />
+        </li>
+      ))
+    }
+  </ul>
+  <ul class="flex shrink-0 animate-marquee2 gap-8" aria-hidden="true">
+    {
+      skills.map((item) => (
+        <li class="shrink-0">
+          <SkillButton skill={item.skill} icon={item.icon} />
+        </li>
+      ))
+    }
+  </ul>
+  <ul class="flex shrink-0 animate-marquee gap-8" aria-hidden="true">
     {
       skills.map((item) => (
         <li class="shrink-0">
