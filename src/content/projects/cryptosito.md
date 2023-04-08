@@ -1,6 +1,6 @@
 ---
 title: Cryptosito
-publishDate: 2020-03-04 00:00:00
+publishDate: 2023-03-04 00:00:00
 img: /assets/cryptosito.webp
 img_alt: Screenshot of homepage of Cryptosito
 link: https://cryptosito.vercel.app/

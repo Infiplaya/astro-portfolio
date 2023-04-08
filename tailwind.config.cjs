@@ -8,17 +8,13 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        marquee: "marquee 25s linear infinite",
-        marquee2: "marquee2 25s linear infinite",
+        marquee: "marquee 29s linear infinite",
+        marqueeSlow: "marquee 30s linear infinite",
       },
       keyframes: {
         marquee: {
           from: { transform: "translateX(0%)" },
           to: { transform: "translateX(-100%)" },
-        },
-        marquee2: {
-          from: { transform: "translateX(100%)" },
-          to: { transform: "translateX(0%)" },
         },
       },
     },
