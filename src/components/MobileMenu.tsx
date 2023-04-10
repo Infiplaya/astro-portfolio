@@ -26,7 +26,18 @@ export function MobileMenu() {
           open={mobileMenu}
           onClose={setMobileMenu}
         >
-          <div className="fixed inset-0 z-10 bg-black bg-opacity-25 backdrop-blur-sm" />
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 z-10 bg-black bg-opacity-25 backdrop-blur-sm" />
+          </Transition.Child>
+
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -50,17 +61,17 @@ export function MobileMenu() {
                   />
                 </button>
               </div>
-              <div className="mt-6 flow-root">
-                <div className="divide-y divide-gray-500/10">
+              <div className="flow-root">
+                <div className="divide-y divide-gray-500/20">
                   <a
                     href="/about"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-800 dark:text-gray-200"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 text-gray-800 dark:text-gray-200"
                   >
                     About
                   </a>
                   <a
                     href="/projects"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-8 text-gray-800 dark:text-gray-200"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-8 text-gray-800 dark:text-gray-200"
                   >
                     Projects
                   </a>
