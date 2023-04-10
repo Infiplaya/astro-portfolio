@@ -3,13 +3,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 import { Image } from "@astrojs/image/components";
 
-import ContactCTA from "../components/ContactCTA.astro";
 import Hero from "../components/Hero.astro";
 import { Icon } from "astro-icon";
 ---
 
 <BaseLayout title="About | Paweł Sobaniec" description="About Paweł Sobaniec">
-  <main class="mx-auto px-5 mt-12">
+  <main class="mx-auto mt-12 px-5">
     <img
       alt="avatar"
       src="/assets/avatar.png"
@@ -19,7 +18,11 @@ import { Icon } from "astro-icon";
     <div>
       <div>
         <section>
-          <h2 class="mt-10 text-3xl font-semibold">About me</h2>
+          <h2
+            class="mt-10 bg-gradient-to-r from-sky-500 via-purple-500 to-sky-500 bg-clip-text text-3xl font-semibold text-transparent"
+          >
+            About me
+          </h2>
           <article class="prose prose-zinc mt-5 dark:prose-invert">
             <p>
               Hey there! I'm a programmer who's been learning the ropes for a
@@ -57,7 +60,11 @@ import { Icon } from "astro-icon";
         </section>
 
         <section class="prose prose-zinc mt-10 dark:prose-invert">
-          <h2 class="-mb-5 text-3xl font-semibold">Tech I Use</h2>
+          <h2
+            class="-mb-5 bg-gradient-to-r from-sky-500 via-purple-500 to-sky-500 bg-clip-text text-3xl font-semibold text-transparent"
+          >
+            Tech I Use
+          </h2>
           <div class="mt-2 text-zinc-700 dark:text-zinc-300">
             <ul class="p-3">
               <li>HTML</li>
