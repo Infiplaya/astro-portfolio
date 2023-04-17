@@ -1,7 +1,7 @@
 ---
 title: Grab a Food
 publishDate: 2023-04-08 00:00:00
-img: /assets/grabfood.webp
+img: /assets/grabafood.webp
 img_alt: Screenshot of homepage of grab-a-food
 link: https://grabafood.vercel.app/
 github: https://github.com/infiplaya/grabafood
