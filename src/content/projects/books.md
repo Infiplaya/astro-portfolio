@@ -3,6 +3,7 @@ title: Bookz
 publishDate: 2023-02-02 00:00:00
 img: /assets/books.webp
 img_alt: Books application built with Svelte.
+logo: /assets/book.svg
 link: https://books-svelte.vercel.app/
 github: https://github.com/Infiplaya/books-svelte
 description: |

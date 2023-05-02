@@ -25,10 +25,10 @@ const { Content } = await entry.render();
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>
   <div class="mx-auto mt-10 max-w-3xl px-8">
-    <a href="/projects/"
-      ><button
-        class="group mb-12 inline-flex rounded-full border border-gray-300 p-1 text-gray-500 transition hover:border-gray-400 dark:border-gray-700 dark:bg-gray-800"
-      >
+    <a
+      href="/projects/"
+      class="group mb-6 inline-flex rounded-full border border-gray-300 p-1 text-gray-500 transition hover:border-gray-400 dark:border-gray-700 dark:bg-gray-800"
+      ><button>
         <Icon
           name="ic:baseline-arrow-back"
           class="w-7 h-7 dark:text-gray-500 transition dark:group-hover:text-gray-400 group-hover:text-gray-700"
@@ -42,14 +42,14 @@ const { Content } = await entry.render();
             <div class="mt-3 flex gap-5">
               {
                 entry.data.tags.map((t) => (
-                  <div class="text-grey-50 mt-4 rounded-full bg-sky-500 px-4 py-2 text-sm font-semibold lg:px-6">
+                  <div class="mt-4 rounded-full bg-sky-600 px-4 py-2 text-sm font-semibold text-gray-50 lg:px-6">
                     {t}
                   </div>
                 ))
               }
             </div>
             <p
-              class="text-grey-700 dark:text-grey-200 mt-5 font-semibold lg:text-lg"
+              class="mt-5 font-semibold text-gray-700 dark:text-gray-200 lg:text-lg"
             >
               {entry.data.description}
             </p>
@@ -105,7 +105,7 @@ const { Content } = await entry.render();
           )
         }
         <article
-          class="prose-grey prose mt-20 max-w-3xl dark:prose-invert lg:px-8"
+          class="prose prose-gray mt-20 max-w-3xl dark:prose-invert lg:px-8"
         >
           <Content />
         </article>

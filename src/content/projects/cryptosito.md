@@ -2,6 +2,7 @@
 title: Cryptosito
 publishDate: 2023-03-04 00:00:00
 img: /assets/cryptosito.webp
+logo: /assets/cryptosito.svg
 img_alt: Screenshot of homepage of Cryptosito
 link: https://cryptosito.vercel.app/
 github: https://github.com/infiplaya/cryptosito

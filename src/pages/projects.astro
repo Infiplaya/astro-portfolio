@@ -12,10 +12,10 @@ const projects = (await getCollection("projects")).sort(
 
 export const smallerProjects = [
   {
-    name: "Grab A Food",
+    name: "Flick Folly",
     description:
-      "Culinary website that will help you find right recipe for you",
-    link: "https://github.com/Infiplaya/grabafood",
+      "App that recommends new tv-shows, movies or anime, powered with Open AI chat-gpt API",
+    link: "https://github.com/Infiplaya/flick-folly",
   },
   {
     name: "E-commerce website",
@@ -81,7 +81,7 @@ export const smallerProjects = [
       {projects.map((project) => <ProjectPreview project={project} />)}
     </div>
 
-    <section class="mt-12 px-5 lg:px-20">
+    <section class="mt-12 border-t px-5 py-6 dark:border-gray-800 lg:px-20">
       <h2 class="text-xl font-semibold lg:text-2xl">Smaller apps</h2>
       <p class="mt-3 text-sm text-gray-700 dark:text-gray-300 lg:text-base">
         Projects that I did for learning purposes, mainly with Javascript or
