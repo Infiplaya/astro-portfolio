@@ -18,11 +18,13 @@ const { data, slug } = Astro.props.project;
     data.logo && (
       <>
         <div class="mx-3 flex h-12 w-12 items-center justify-center rounded-full border border-gray-200 shadow shadow-gray-300 dark:border-gray-700 dark:bg-white/5 dark:shadow-none">
-          <Image
+          <img
             src={data.logo}
             alt={data.title}
             height={28}
             width={28}
+            loading="lazy"
+            decoding="async"
             class="h-7 w-7 rounded-full shadow dark:shadow-gray-700"
           />
         </div>
